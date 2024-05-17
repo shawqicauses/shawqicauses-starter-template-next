@@ -1,11 +1,28 @@
 {
-  "reviewed": "true",
+  "reviewed": "true 1️⃣",
   "version": "1.0.0",
   "name": "shawqicauses-starter-template-next",
   "description": "A starter template for Next.JS projects includes every package that I need/use to build them. Developed by @shawqicauses.",
   "author": "shawqicauses <shawqicauses@outlook.com>",
   "license": "ISC",
   "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "next": "14.2.3",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "20.12.12",
+    "@types/react": "18.3.2",
+    "@types/react-dom": "18.3.0",
+    "typescript": "5.4.5"
+  },
   "homepage": "https://github.com/shawqicauses/shawqicauses-starter-template-next/README.md",
   "repository": {
     "type": "git",
