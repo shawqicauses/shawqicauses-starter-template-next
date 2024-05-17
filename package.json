@@ -1,0 +1,17 @@
+{
+  "reviewed": "true",
+  "version": "1.0.0",
+  "name": "shawqicauses-starter-template-next",
+  "description": "A starter template for Next.JS projects includes every package that I need/use to build them. Developed by @shawqicauses.",
+  "author": "shawqicauses <shawqicauses@outlook.com>",
+  "license": "ISC",
+  "private": true,
+  "homepage": "https://github.com/shawqicauses/shawqicauses-starter-template-next/README.md",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shawqicauses/shawqicauses-starter-template-next"
+  },
+  "bugs": {
+    "url": "https://github.com/shawqicauses/shawqicauses-starter-template-next/issues"
+  }
+}
