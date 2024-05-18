@@ -1,4 +1,4 @@
-/* DONE REVIEWING: GITHUB COMMIT 2️⃣ */
+/* DONE REVIEWING: GITHUB COMMIT 3️⃣ */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -69,7 +69,11 @@
     @apply border border-input bg-background hover:bg-accent hover:text-accent-foreground;
   }
 
-  .shc-button-default {
+  .shc-button-link {
+    @apply text-primary underline-offset-4 hover:underline;
+  }
+
+  .shc-button-normal {
     @apply h-10 px-4;
   }
 
