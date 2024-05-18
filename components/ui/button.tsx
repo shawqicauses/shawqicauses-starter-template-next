@@ -1,6 +1,9 @@
-// DONE REVIEWING: GITHUB COMMIT 1️⃣
+// DONE REVIEWING: GITHUB COMMIT 2️⃣
 
-import {cva} from "class-variance-authority"
+import {Slot} from "@radix-ui/react-slot"
+import {VariantProps, cva} from "class-variance-authority"
+import {ButtonHTMLAttributes, forwardRef} from "react"
+import {cn} from "../../lib/utils"
 
 const buttonVariants = cva("shc-button-base", {
   variants: {
@@ -23,8 +26,26 @@ const buttonVariants = cva("shc-button-base", {
   }
 })
 
-const Button = function Button() {
-  return <button type="button">Button</button>
+export interface ButtonProps
+  extends ButtonHTMLAttributes<HTMLButtonElement>,
+    VariantProps<typeof buttonVariants> {
+  asChild?: boolean
 }
 
-export default Button
+const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+  ({className, variant, size, asChild = false, ...props}, ref) => {
+    const Component = asChild ? Slot : "button"
+    return (
+      <Component
+        type="button"
+        ref={ref}
+        className={cn(buttonVariants({variant, size, className}))}
+        {...props}
+      />
+    )
+  }
+)
+
+Button.displayName = "Button"
+
+export {Button, buttonVariants}

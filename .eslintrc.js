@@ -1,4 +1,4 @@
-// DONE REVIEWING: GITHUB COMMIT 2️⃣
+// DONE REVIEWING: GITHUB COMMIT 1️⃣
 module.exports = {
   extends: [
     "next",
@@ -43,7 +43,8 @@ module.exports = {
     "react/jsx-filename-extension": ["error", {extensions: [".ts", ".tsx"]}],
     "react/jsx-fragments": "off",
     "react/jsx-props-no-spreading": "off",
-    "react/react-in-jsx-scope": "off"
+    "react/react-in-jsx-scope": "off",
+    "react/require-default-props": "off"
   },
   settings: {
     "import/resolver": {
