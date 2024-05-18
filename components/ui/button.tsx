@@ -1,4 +1,4 @@
-// DONE REVIEWING: GITHUB COMMIT 2️⃣
+// DONE REVIEWING: GITHUB COMMIT 3️⃣
 
 import {Slot} from "@radix-ui/react-slot"
 import {VariantProps, cva} from "class-variance-authority"
@@ -49,3 +49,4 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 Button.displayName = "Button"
 
 export {Button, buttonVariants}
+export default Button
