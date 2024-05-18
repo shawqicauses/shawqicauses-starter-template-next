@@ -1,4 +1,4 @@
-/* DONE REVIEWING: GITHUB COMMIT 1️⃣ */
+/* DONE REVIEWING: GITHUB COMMIT 2️⃣ */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -49,5 +49,39 @@
 
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .shc-button-base {
+    @apply inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50;
+  }
+
+  .shc-button-primary {
+    @apply bg-primary text-primary-foreground hover:bg-opacity-90;
+  }
+
+  .shc-button-secondary {
+    @apply bg-secondary text-secondary-foreground hover:bg-opacity-90;
+  }
+
+  .shc-button-outline {
+    @apply border border-input bg-background hover:bg-accent hover:text-accent-foreground;
+  }
+
+  .shc-button-default {
+    @apply h-10 px-4;
+  }
+
+  .shc-button-sm {
+    @apply h-9 px-3;
+  }
+
+  .shc-button-lg {
+    @apply h-11 px-8;
+  }
+
+  .shc-button-icon {
+    @apply h-10 w-10;
   }
 }
