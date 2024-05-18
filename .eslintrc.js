@@ -1,4 +1,4 @@
-// DONE REVIEWING: GITHUB COMMIT 1️⃣
+// DONE REVIEWING: GITHUB COMMIT 2️⃣
 module.exports = {
   extends: [
     "next",
@@ -7,13 +7,11 @@ module.exports = {
     "airbnb/hooks",
     "eslint:recommended",
     "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended",
-    "prettier"
+    "plugin:prettier/recommended"
   ],
-  plugins: ["react", "@typescript-eslint"],
-  parserOptions: {ecmaVersion: 2021, sourceModule: "module"},
+  plugins: ["react", "prettier"],
   rules: {
-    "prettier/prettier": "error",
+    "prettier/prettier": "warn",
     "arrow-body-style": "off",
     "class-methods-use-this": "off",
     "consistent-return": "off",
