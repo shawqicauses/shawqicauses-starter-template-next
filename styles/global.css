@@ -1,5 +1,53 @@
-/* DONE REVIEWING: GITHUB COMMIT */
-
+/* DONE REVIEWING: GITHUB COMMIT 1️⃣ */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    /* GROUNDS */
+    --background: theme(colors.white);
+    --background-layer-2: theme(colors.zinc.50);
+    --foreground: theme(colors.zinc.950);
+
+    /* DIVIDERS */
+    --border: theme(colors.zinc.200);
+    --ring: var(--foreground);
+    --input: var(--border);
+
+    /* BRANDS */
+    --primary: theme(colors.red.600);
+    --primary-foreground: theme(colors.red.50);
+    --secondary: theme(colors.indigo.600);
+    --secondary-foreground: theme(colors.indigo.50);
+    --accent: var(--foreground);
+    --accent-foreground: var(--background-layer-2);
+
+    --muted: theme(colors.zinc.100);
+    --muted-foreground: theme(colors.zinc.500);
+
+    /* COMPONENTS */
+    --card: var(--background-layer-2);
+    --card-foreground: var(--foreground);
+
+    --popover: var(--background-layer-2);
+    --popover: var(--foreground);
+  }
+
+  .dark {
+    --background: theme(colors.zinc.950);
+    --background-layer-2: theme(colors.zinc.900);
+    --foreground: theme(colors.white);
+    --border: theme(colors.zinc.800);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
