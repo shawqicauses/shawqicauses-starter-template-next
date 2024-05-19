@@ -1,2 +1,10 @@
-// DONE REVIEWING: GITHUB COMMIT
+// DONE REVIEWING: GITHUB COMMIT 1️⃣
 export {default as Button} from "./button"
+export {default as Form} from "./form"
+export {default as FormControl} from "./form/form-control"
+export {default as FormDescription} from "./form/form-description"
+export {default as FormField} from "./form/form-field"
+export {default as FormItem} from "./form/form-item"
+export {default as FormLabel} from "./form/form-label"
+export {default as FormMessage} from "./form/form-message"
+export {default as Input} from "./input"
