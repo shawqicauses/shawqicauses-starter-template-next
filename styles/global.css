@@ -1,4 +1,4 @@
-/* DONE REVIEWING: GITHUB COMMIT 1️⃣ */
+/* DONE REVIEWING: GITHUB COMMIT 2️⃣ */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -55,10 +55,6 @@
 @layer components {
   .shc-label-base {
     @apply text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70;
-  }
-
-  .shc-label {
-    @apply shc-label-base;
   }
 
   .shc-button-base {
