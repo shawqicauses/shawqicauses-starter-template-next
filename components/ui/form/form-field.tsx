@@ -1,7 +1,8 @@
-// DONE REVIEWING: GITHUB COMMIT 1️⃣
+// DONE REVIEWING: GITHUB COMMIT 2️⃣
 
-import {createContext, useMemo} from "react"
-import {Controller, ControllerProps, FieldPath, FieldValues} from "react-hook-form"
+import {createContext, useContext, useMemo} from "react"
+import {Controller, ControllerProps, FieldPath, FieldValues, useFormContext} from "react-hook-form"
+import {FormItemContext} from "./form-item"
 
 type FormFieldContextValue<
   TFieldValues extends FieldValues = FieldValues,
@@ -20,6 +21,26 @@ const FormField = function FormField<
       <Controller {...props} />
     </FormFieldContext.Provider>
   )
+}
+
+export const useFormField = function useFormField() {
+  const fieldContext = useContext(FormFieldContext)
+  const itemContext = useContext(FormItemContext)
+  const {getFieldState, formState} = useFormContext()
+  const fieldState = getFieldState(fieldContext.name, formState)
+
+  if (!fieldContext)
+    throw new Error("React Hook: (<useFormField />) must be used with-in its (Provider)")
+  const {id} = itemContext
+
+  return {
+    id,
+    name: fieldContext.name,
+    formItemId: `${id}-form-item`,
+    formDescriptionId: `${id}-form-item-description`,
+    formMessageId: `${id}-form-item-message`,
+    ...fieldState
+  }
 }
 
 export default FormField

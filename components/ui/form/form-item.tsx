@@ -1,11 +1,11 @@
-// DONE REVIEWING: GITHUB COMMIT 1️⃣
+// DONE REVIEWING: GITHUB COMMIT 2️⃣
 
 import {HTMLAttributes, createContext, forwardRef, useId, useMemo} from "react"
 import {cn} from "../../../lib/utils"
 
 type FormItemContextValue = {id: string}
 
-const FormItemContext = createContext<FormItemContextValue>({} as FormItemContextValue)
+export const FormItemContext = createContext<FormItemContextValue>({} as FormItemContextValue)
 
 const FormItem = forwardRef<HTMLDivElement, HTMLAttributes<HTMLDivElement>>(
   ({className, ...props}, ref) => {
