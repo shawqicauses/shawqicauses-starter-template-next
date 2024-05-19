@@ -1,4 +1,4 @@
-/* DONE REVIEWING: GITHUB COMMIT 3️⃣ */
+/* DONE REVIEWING: GITHUB COMMIT 1️⃣ */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -53,6 +53,14 @@
 }
 
 @layer components {
+  .shc-label-base {
+    @apply text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70;
+  }
+
+  .shc-label {
+    @apply shc-label-base;
+  }
+
   .shc-button-base {
     @apply inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50;
   }
