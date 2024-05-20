@@ -1,4 +1,4 @@
-/* DONE REVIEWING: GITHUB COMMIT 2️⃣ */
+/* DONE REVIEWING: GITHUB COMMIT 3️⃣ */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -54,23 +54,55 @@
 
 @layer components {
   .shc-label-base {
-    @apply text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70;
+    @apply text-sm font-medium leading-none peer-disabled:pointer-events-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70;
+  }
+
+  .shc-body-inline-base {
+    @apply text-sm font-normal leading-normal;
+  }
+
+  .shc-card {
+    @apply rounded-md border border-border bg-background-layer-2 px-3 py-2;
+  }
+
+  .shc-form-disabled-style {
+    @apply disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .shc-form-focus-style {
+    @apply ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
+  }
+
+  .shc-input-typography-style {
+    @apply text-sm font-medium leading-normal placeholder:font-normal placeholder:text-muted-foreground;
+  }
+
+  .shc-input-file-style {
+    @apply file:border-0 file:bg-transparent file:text-sm file:font-medium;
+  }
+
+  .shc-input-base {
+    @apply shc-flex-middle-start shc-card shc-form-disabled-style shc-form-focus-style shc-input-typography-style shc-input-file-style shc-transition w-full;
+  }
+
+  .shc-button-typography-style {
+    @apply whitespace-nowrap text-sm font-medium leading-[1.375rem];
   }
 
   .shc-button-base {
-    @apply inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50;
+    @apply shc-flex-center shc-card shc-form-disabled-style shc-form-focus-style shc-button-typography-style shc-transition;
   }
 
   .shc-button-primary {
-    @apply bg-primary text-primary-foreground hover:bg-opacity-90;
+    @apply border-primary bg-primary text-primary-foreground hover:bg-opacity-90;
   }
 
   .shc-button-secondary {
-    @apply bg-secondary text-secondary-foreground hover:bg-opacity-90;
+    @apply border-secondary bg-secondary text-secondary-foreground hover:bg-opacity-90;
   }
 
   .shc-button-outline {
-    @apply border border-input bg-background hover:bg-accent hover:text-accent-foreground;
+    @apply border-input bg-background hover:bg-accent hover:text-accent-foreground;
   }
 
   .shc-button-link {
@@ -78,18 +110,32 @@
   }
 
   .shc-button-normal {
-    @apply h-10 px-4;
+    @apply px-4;
   }
 
   .shc-button-sm {
-    @apply h-9 px-3;
+    @apply px-3 py-1.5;
   }
 
   .shc-button-lg {
-    @apply h-11 px-8;
+    @apply px-8 py-2.5;
   }
 
   .shc-button-icon {
     @apply h-10 w-10;
+  }
+}
+
+@layer utilities {
+  .shc-flex-middle-start {
+    @apply flex items-center justify-start;
+  }
+
+  .shc-flex-center {
+    @apply flex items-center justify-center;
+  }
+
+  .shc-transition {
+    @apply transition-colors duration-300 ease-linear;
   }
 }
