@@ -1,4 +1,4 @@
-// DONE REVIEWING: GITHUB COMMIT 1️⃣
+// DONE REVIEWING: GITHUB COMMIT 2️⃣
 /** @type {import('tailwindcss').Config} */
 
 const tailwindCSSAnimate = require("tailwindcss-animate")
@@ -8,6 +8,7 @@ module.exports = {
   content: [
     "./app/**/*.{ts,tsx,js,jsx}",
     "./pages/**/*.{ts,tsx,js,jsx}",
+    "./examples/**/*.{ts,tsx,js,jsx}",
     "./components/**/*.{ts,tsx,js,jsx}",
     "./lib/**/*.{ts,tsx,js,jsx}"
   ],

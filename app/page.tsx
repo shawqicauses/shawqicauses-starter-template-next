@@ -1,10 +1,12 @@
-// DONE REVIEWING: GITHUB COMMIT
-import {Button} from "../components/ui"
+// DONE REVIEWING: GITHUB COMMIT 1️⃣
+import {FormBasic} from "../examples"
 
 const Page = function Page() {
   return (
     <main>
-      <Button />
+      <div className="mx-auto max-w-md py-20">
+        <FormBasic />
+      </div>
     </main>
   )
 }
