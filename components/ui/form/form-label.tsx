@@ -1,4 +1,4 @@
-// DONE REVIEWING: GITHUB COMMIT 1️⃣
+// DONE REVIEWING: GITHUB COMMIT
 
 import * as LabelPrimitive from "@radix-ui/react-label"
 import {ComponentPropsWithoutRef, ElementRef, forwardRef} from "react"

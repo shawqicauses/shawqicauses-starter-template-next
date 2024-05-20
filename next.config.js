@@ -1,4 +1,4 @@
-// DONE REVIEWING: GITHUB COMMIT 1️⃣
+// DONE REVIEWING: GITHUB COMMIT
 /** @type {import("next").NextConfig} */
 
 const nextConfig = {}

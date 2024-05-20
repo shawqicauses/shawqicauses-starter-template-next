@@ -1,4 +1,4 @@
-// DONE REVIEWING: GITHUB COMMIT 1️⃣
+// DONE REVIEWING: GITHUB COMMIT
 module.exports = {
   extends: [
     "next",

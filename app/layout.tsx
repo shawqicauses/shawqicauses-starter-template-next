@@ -1,4 +1,4 @@
-// DONE REVIEWING: GITHUB COMMIT 2️⃣
+// DONE REVIEWING: GITHUB COMMIT
 import {Poppins} from "next/font/google"
 import {PropsWithChildren} from "react"
 import "../styles/global.css"

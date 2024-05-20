@@ -1,4 +1,4 @@
-// DONE REVIEWING: GITHUB COMMIT 2️⃣
+// DONE REVIEWING: GITHUB COMMIT
 export {default as Button} from "./button"
 export {default as Form} from "./form"
 export {default as FormControl} from "./form/form-control"

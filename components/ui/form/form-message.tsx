@@ -1,4 +1,4 @@
-// DONE REVIEWING: GITHUB COMMIT 2️⃣
+// DONE REVIEWING: GITHUB COMMIT
 
 import {HTMLAttributes, forwardRef} from "react"
 import {cn} from "../../../lib/utils"

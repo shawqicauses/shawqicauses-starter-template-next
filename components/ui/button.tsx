@@ -1,4 +1,4 @@
-// DONE REVIEWING: GITHUB COMMIT 3️⃣
+// DONE REVIEWING: GITHUB COMMIT
 
 import {Slot} from "@radix-ui/react-slot"
 import {VariantProps, cva} from "class-variance-authority"
