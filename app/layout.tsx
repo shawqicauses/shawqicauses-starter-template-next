@@ -1,7 +1,8 @@
-// DONE REVIEWING: GITHUB COMMIT
+// DONE REVIEWING: GITHUB COMMIT 1️⃣
 import {Poppins} from "next/font/google"
 import {PropsWithChildren} from "react"
 import "../styles/global.css"
+import Providers from "./providers"
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -12,7 +13,9 @@ const Layout = function Layout({children}: PropsWithChildren) {
   return (
     <html lang="en">
       <head />
-      <body className={poppins.className}>{children}</body>
+      <body className={poppins.className}>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   )
 }
