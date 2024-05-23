@@ -1,11 +1,12 @@
-// DONE REVIEWING: GITHUB COMMIT
-import {FormBasic} from "../examples"
+// DONE REVIEWING: GITHUB COMMIT 1️⃣
 
-const Page = function Page() {
+import TRPCBasic from "../examples/trpc/basic"
+
+const Page = async function Page() {
   return (
     <main>
       <div className="mx-auto max-w-md py-20">
-        <FormBasic />
+        <TRPCBasic />
       </div>
     </main>
   )

@@ -1,9 +1,11 @@
 "use client"
 
-// DONE REVIEWING: GITHUB COMMIT
+// DONE REVIEWING: GITHUB COMMIT 1️⃣
 
 import {QueryClient, QueryClientProvider} from "@tanstack/react-query"
-import {PropsWithChildren} from "react"
+import {httpBatchLink} from "@trpc/client"
+import {PropsWithChildren, useState} from "react"
+import trpc from "../client"
 
 const createQueryClient = function createQueryClient() {
   return new QueryClient({
@@ -25,7 +27,21 @@ const getQueryClient = function getQueryClient() {
 
 const Providers = function Providers({children}: PropsWithChildren) {
   const queryClient = getQueryClient()
-  return <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+  const [trpcClient] = useState(() =>
+    trpc.createClient({
+      links: [
+        httpBatchLink({
+          url: "http://localhost:3000/api/trpc"
+        })
+      ]
+    })
+  )
+
+  return (
+    <trpc.Provider client={trpcClient} queryClient={queryClient}>
+      <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+    </trpc.Provider>
+  )
 }
 
 export default Providers
