@@ -1,5 +1,5 @@
 {
-  "reviewed": "true 4️⃣",
+  "reviewed": "true 5️⃣",
   "version": "1.0.0",
   "name": "shawqicauses-starter-template-next",
   "description": "A starter template for Next.JS projects includes every package that I need/use to build them. Developed by @shawqicauses.",
@@ -31,6 +31,7 @@
     "react-hook-form": "7.51.4",
     "tailwind-merge": "2.3.0",
     "tailwindcss-animate": "1.0.7",
+    "wretch": "2.8.1",
     "zod": "3.23.8"
   },
   "devDependencies": {
