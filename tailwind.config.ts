@@ -1,9 +1,10 @@
-// DONE REVIEWING: GITHUB COMMIT
-/** @type {import('tailwindcss').Config} */
+// DONE REVIEWING: GITHUB COMMIT 1️⃣
+import typographyPlugin from "@tailwindcss/typography"
+import {type Config} from "tailwindcss"
+import tailwindCSSAnimate from "tailwindcss-animate"
+import typographyStyles from "./styles/typography"
 
-const tailwindCSSAnimate = require("tailwindcss-animate")
-
-module.exports = {
+export default {
   darkMode: ["class"],
   content: [
     "./app/**/*.{ts,tsx,js,jsx}",
@@ -29,10 +30,19 @@ module.exports = {
         "background-layer-2": "var(--background-layer-2)",
         "foreground": "var(--foreground)",
         "border": "var(--border)",
+        "border-light": "var(--border-light)",
         "ring": "var(--ring)",
         "input": "var(--input)",
-        "primary": {DEFAULT: "var(--primary)", foreground: "var(--primary-foreground)"},
-        "secondary": {DEFAULT: "var(--secondary)", foreground: "var(--secondary-foreground)"},
+        "primary": {
+          DEFAULT: "var(--primary)",
+          hover: "var(--primary-hover)",
+          foreground: "var(--primary-foreground)"
+        },
+        "secondary": {
+          DEFAULT: "var(--secondary)",
+          hover: "var(--secondary-hover)",
+          foreground: "var(--secondary-foreground)"
+        },
         "accent": {DEFAULT: "var(--accent)", foreground: "var(--accent-foreground)"},
         "muted": {DEFAULT: "var(--muted)", foreground: "var(--muted-foreground)"},
         "card": {DEFAULT: "var(--card)", foreground: "var(--card-foreground)"},
@@ -120,7 +130,7 @@ module.exports = {
     },
     fontSize: {
       "xs": ["0.75rem", "1rem"],
-      "sm": ["0.875rem", "1.25rem"],
+      "sm": ["0.875rem", "1.5rem"],
       "base": ["1rem", "1.5rem"],
       "lg": ["1.125rem", "1.75rem"],
       "xl": ["1.25rem", "1.75rem"],
@@ -134,15 +144,15 @@ module.exports = {
       "xl-9": ["8rem", "1"]
     },
     fontWeight: {
-      "thin": 100,
-      "extra-light": 200,
-      "light": 300,
-      "normal": 400,
-      "medium": 500,
-      "semi-bold": 600,
-      "bold": 700,
-      "extra-bold": 800,
-      "black": 900
+      "thin": "100",
+      "extra-light": "200",
+      "light": "300",
+      "normal": "400",
+      "medium": "500",
+      "semi-bold": "600",
+      "bold": "700",
+      "extra-bold": "800",
+      "black": "900"
     },
     borderRadius: {
       "none": "0rem",
@@ -225,7 +235,8 @@ module.exports = {
       "xl": "1.5rem",
       "xl-2": "2.5rem",
       "xl-3": "3.75rem"
-    }
+    },
+    typography: typographyStyles
   },
-  plugins: [tailwindCSSAnimate]
-}
+  plugins: [typographyPlugin, tailwindCSSAnimate]
+} satisfies Config
