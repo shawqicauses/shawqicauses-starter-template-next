@@ -1,5 +1,5 @@
 {
-  "reviewed": "true 1️⃣",
+  "reviewed": "true 2️⃣",
   "compilerOptions": {
     "target": "ES5",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
@@ -17,6 +17,6 @@
     "incremental": true,
     "plugins": [{"name": "next"}]
   },
-  "include": [".next/types/**/*.ts", "next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": [".next/types/**/*.ts", "next-env.d.ts", "tailwind.config.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]
 }
