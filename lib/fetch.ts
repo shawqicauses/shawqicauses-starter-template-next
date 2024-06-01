@@ -1,4 +1,4 @@
-// DONE REVIEWING: GITHUB COMMIT 1️⃣
+// DONE REVIEWING: GITHUB COMMIT 2️⃣
 
 type JSONValue = string | number | boolean | {[key: string]: JSONValue} | JSONValue[]
 
@@ -20,6 +20,22 @@ type FetchOptionsWithoutBody = FetchOptionsBase & {
 }
 
 type FetchOptions<T> = FetchOptionsWithBody<T> | FetchOptionsWithoutBody
+
+class FetchError extends Error {
+  public status: number
+
+  public statusText: string
+
+  public cause: Error | null
+
+  constructor(status: number, statusText: string, message: string, cause: Error | null) {
+    super(message)
+    this.name = "FetchError"
+    this.status = status
+    this.statusText = statusText
+    this.cause = cause
+  }
+}
 
 export const shcFetch = function shcFetch() {
   return null
