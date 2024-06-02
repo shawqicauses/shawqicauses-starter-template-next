@@ -1,4 +1,4 @@
-// DONE REVIEWING: GITHUB COMMIT 6️⃣
+// DONE REVIEWING: GITHUB COMMIT 7️⃣
 
 type JSONValue = string | number | boolean | {[key: string]: JSONValue} | JSONValue[]
 
@@ -136,6 +136,11 @@ const fetchRetry = async function fetchRetry(
     const {statusText, message} = ERRORS_DETAILS.default
     throw new FetchError(0, statusText, message, error as Error)
   }
+}
+
+const handleHTTPError = function handleHTTPError(status: number) {
+  const {statusText, message} = ERRORS_DETAILS[status] || ERRORS_DETAILS.default
+  throw new FetchError(status, statusText, message)
 }
 
 export const shcFetch = function shcFetch() {
