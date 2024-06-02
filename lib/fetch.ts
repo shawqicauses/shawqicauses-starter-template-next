@@ -1,4 +1,4 @@
-// DONE REVIEWING: GITHUB COMMIT 5️⃣
+// DONE REVIEWING: GITHUB COMMIT 6️⃣
 
 type JSONValue = string | number | boolean | {[key: string]: JSONValue} | JSONValue[]
 
@@ -71,9 +71,13 @@ const ERRORS_DETAILS: Record<string | number, {statusText: string; message: stri
     statusText: "MAXIMUM_RETRIES",
     message: "Maximum retries reached. Please try again."
   },
+  network: {
+    statusText: "NETWORK",
+    message: "A network error occurred. Please check your connection and try again."
+  },
   default: {
-    statusText: "ERROR",
-    message: "An un-expected error occurred. Please try again."
+    statusText: "UNKNOWN_ERROR",
+    message: "An unknown or unexpected error occurred. Please try again."
   }
 }
 
@@ -96,7 +100,8 @@ const fetchWithTimeout = function fetchWithTimeout(
       })
       .catch((error) => {
         clearTimeout(timer)
-        const {statusText, message} = ERRORS_DETAILS.default
+        const {statusText, message} =
+          error instanceof TypeError ? ERRORS_DETAILS.network : ERRORS_DETAILS.default
         reject(new FetchError(0, statusText, message, error))
       })
   })
@@ -118,13 +123,15 @@ const fetchRetry = async function fetchRetry(
   } catch (error) {
     if (error instanceof FetchError && error.status === 408 && retries > 1)
       return fetchRetry(url, options, retries - 1)
-    if (retries <= 1) {
-      const {statusText, message} = ERRORS_DETAILS.retries
-      throw new FetchError(408, statusText, message, error as Error)
-    }
 
-    if (error instanceof FetchError)
+    if (error instanceof FetchError) {
+      if (retries <= 1) {
+        const {statusText, message} = ERRORS_DETAILS.retries
+        throw new FetchError(408, statusText, message, error as Error)
+      }
+
       throw new FetchError(error.status, error.statusText, error.message, error)
+    }
 
     const {statusText, message} = ERRORS_DETAILS.default
     throw new FetchError(0, statusText, message, error as Error)
