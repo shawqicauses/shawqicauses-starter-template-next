@@ -1,10 +1,10 @@
-// DONE REVIEWING: GITHUB COMMIT 7️⃣
-
-type JSONValue = string | number | boolean | {[key: string]: JSONValue} | JSONValue[]
+// DONE REVIEWING: GITHUB COMMIT 8️⃣
+/* eslint no-console: "off" */
+/* eslint no-undef: "off" */
 
 type FetchOptionsBase = {
   method?: "GET" | "POST" | "PUT" | "DELETE"
-  headers?: Record<string, string>
+  headers?: HeadersInit
   timeout?: number
 }
 
@@ -20,7 +20,8 @@ type FetchOptionsWithoutBody = FetchOptionsBase & {
 
 type FetchOptions<T> = FetchOptionsWithBody<T> | FetchOptionsWithoutBody
 
-type SHCRequestInit = RequestInit & {
+type SHCRequestInit = Omit<RequestInit, "body"> & {
+  body?: BodyInit | null
   timeout?: number
 }
 
@@ -143,8 +144,38 @@ const handleHTTPError = function handleHTTPError(status: number) {
   throw new FetchError(status, statusText, message)
 }
 
-export const shcFetch = function shcFetch() {
-  return null
+export const shcFetch = async function shcFetch<TResponse, TRequestBody = undefined>(
+  resource: string,
+  options: FetchOptions<TRequestBody> = {},
+  retries: number = 3
+): Promise<TResponse> {
+  const {headers, timeout, ...optionsRest} = options
+  const headersMerged: HeadersInit = {...HEADERS_DEFAULT, ...headers}
+
+  const requestOptions: SHCRequestInit = {
+    ...optionsRest,
+    headers: headersMerged,
+    body: optionsRest.body ? JSON.stringify(optionsRest.body) : null,
+    timeout
+  }
+
+  try {
+    const response = await fetchRetry(`${URL_BASE}${resource}`, requestOptions, retries)
+    if (!response.ok) handleHTTPError(response.status)
+
+    const data: TResponse = await response.json()
+    return data
+  } catch (error) {
+    if (error instanceof FetchError) {
+      console.error(`FETCH_ERROR: ${error.message}`, {cause: error.cause})
+      throw error
+    } else {
+      const {statusText, message} = ERRORS_DETAILS.default
+      const fetchError = new FetchError(0, statusText, message, error as Error)
+      console.error(error, "UNKNOWN_ERROR:", fetchError)
+      throw fetchError
+    }
+  }
 }
 
 export default shcFetch
