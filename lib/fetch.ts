@@ -1,4 +1,4 @@
-// DONE REVIEWING: GITHUB COMMIT 1️⃣0️⃣
+// DONE REVIEWING: GITHUB COMMIT 1️⃣1️⃣
 /* eslint no-console: "off" */
 /* eslint no-undef: "off" */
 
@@ -91,7 +91,7 @@ const ERRORS_DETAILS: Record<ERRORS_TYPES, {status: number; statusText: string; 
     }
   }
 
-const handleHTTPError = function handleHTTPError(
+const errorHandler = function errorHandler(
   type: ERRORS_TYPES,
   statusText?: string,
   message?: string,
@@ -142,7 +142,7 @@ const fetchRetry = async function fetchRetry(
 ): Promise<Response> {
   try {
     const response = await fetchWithTimeout(url, options)
-    if (!response.ok) handleHTTPError((response.status as ERRORS_TYPES) || "unknown")
+    if (!response.ok) errorHandler((response.status as ERRORS_TYPES) || "unknown")
     return response
   } catch (error) {
     if (error instanceof FetchError && error.status === 408 && maximumRetries > 1)
@@ -150,11 +150,11 @@ const fetchRetry = async function fetchRetry(
 
     if (error instanceof FetchError) {
       if (maximumRetries <= 1)
-        return handleHTTPError("maximumRetries", error.statusText, error.message, error)
-      return handleHTTPError(error.status as ERRORS_TYPES, error.statusText, error.message, error)
+        return errorHandler("maximumRetries", error.statusText, error.message, error)
+      return errorHandler(error.status as ERRORS_TYPES, error.statusText, error.message, error)
     }
 
-    return handleHTTPError("unknown")
+    return errorHandler("unknown")
   }
 }
 
@@ -181,7 +181,7 @@ export const shcFetch = async function shcFetch<TResponse, TRequestBody = undefi
     const status = error instanceof FetchError ? (error.status as ERRORS_TYPES) : "unknown"
     const statusText = error instanceof FetchError ? error.statusText : undefined
     const message = error instanceof FetchError ? error.message : undefined
-    return handleHTTPError(status, statusText, message, error as Error)
+    return errorHandler(status, statusText, message, error as Error)
   }
 }
 
