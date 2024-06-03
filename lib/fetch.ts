@@ -1,4 +1,4 @@
-// DONE REVIEWING: GITHUB COMMIT 8️⃣
+// DONE REVIEWING: GITHUB COMMIT 9️⃣
 /* eslint no-console: "off" */
 /* eslint no-undef: "off" */
 
@@ -30,56 +30,83 @@ class FetchError extends Error {
 
   public statusText: string
 
-  public cause?: Error
-
   constructor(status: number, statusText: string, message: string, cause?: Error) {
-    super(message)
+    super(message, {cause})
     this.name = "FetchError"
     this.status = status
     this.statusText = statusText
-    this.cause = cause
   }
 }
 
 const HEADERS_DEFAULT: Record<string, string> = {"Content-Type": "application/json"}
 const URL_BASE: string | undefined = process.env.NEXT_PUBLIC_URL_BASE
-const ERRORS_DETAILS: Record<string | number, {statusText: string; message: string}> = {
-  400: {
-    statusText: "BAD_REQUEST",
-    message: "The request could not be understood by our server."
-  },
-  401: {
-    statusText: "NOT_AUTHORIZED",
-    message: "You are not authorized to access this resource."
-  },
-  403: {
-    statusText: "FORBIDDEN",
-    message: "Access to this resource is forbidden."
-  },
-  404: {
-    statusText: "NOT_FOUND",
-    message: "The requested resource could not be found."
-  },
-  408: {
-    statusText: "REQUEST_TIMEOUT",
-    message: "The request timed out. Please try again."
-  },
-  500: {
-    statusText: "INTERNAL_SERVER_ERROR",
-    message: "There was an error on our server. Please try again later."
-  },
-  retries: {
-    statusText: "MAXIMUM_RETRIES",
-    message: "Maximum retries reached. Please try again."
-  },
-  network: {
-    statusText: "NETWORK",
-    message: "A network error occurred. Please check your connection and try again."
-  },
-  default: {
-    statusText: "UNKNOWN_ERROR",
-    message: "An unknown or unexpected error occurred. Please try again."
+
+type ERRORS_TYPES = 400 | 401 | 403 | 404 | 408 | 500 | "maximumRetries" | "network" | "unknown"
+const ERRORS_DETAILS: Record<ERRORS_TYPES, {status: number; statusText: string; message: string}> =
+  {
+    400: {
+      status: 400,
+      statusText: "BAD_REQUEST",
+      message: "The request could not be understood by our server."
+    },
+    401: {
+      status: 401,
+      statusText: "NOT_AUTHORIZED",
+      message: "You are not authorized to access this resource."
+    },
+    403: {
+      status: 403,
+      statusText: "FORBIDDEN",
+      message: "Access to this resource is forbidden."
+    },
+    404: {
+      status: 404,
+      statusText: "NOT_FOUND",
+      message: "The requested resource could not be found."
+    },
+    408: {
+      status: 408,
+      statusText: "REQUEST_TIMEOUT",
+      message: "The request timed out. Please try again."
+    },
+    500: {
+      status: 500,
+      statusText: "INTERNAL_SERVER_ERROR",
+      message: "There was an error on our server. Please try again later."
+    },
+    maximumRetries: {
+      status: 408,
+      statusText: "MAXIMUM_RETRIES",
+      message: "Maximum retries reached. Please try again."
+    },
+    network: {
+      status: 0,
+      statusText: "NETWORK",
+      message: "A network error occurred. Please check your connection and try again."
+    },
+    unknown: {
+      status: 0,
+      statusText: "UNKNOWN_ERROR",
+      message: "An unknown or unexpected error occurred. Please try again."
+    }
   }
+
+const handleHTTPError = function handleHTTPError(
+  type: ERRORS_TYPES,
+  statusText?: string,
+  message?: string,
+  cause?: Error
+): never {
+  const {
+    status: errorStatus,
+    statusText: statusTextDefault,
+    message: messageDefault
+  } = ERRORS_DETAILS[type] || ERRORS_DETAILS.unknown
+  const errorStatusText = statusText || statusTextDefault
+  const errorMessage = message || messageDefault
+  const fetchError = new FetchError(errorStatus, errorStatusText, errorMessage, cause)
+  console.log(`${type}:${errorMessage}`, fetchError)
+  throw fetchError
 }
 
 const fetchWithTimeout = function fetchWithTimeout(
@@ -102,7 +129,7 @@ const fetchWithTimeout = function fetchWithTimeout(
       .catch((error) => {
         clearTimeout(timer)
         const {statusText, message} =
-          error instanceof TypeError ? ERRORS_DETAILS.network : ERRORS_DETAILS.default
+          error instanceof TypeError ? ERRORS_DETAILS.network : ERRORS_DETAILS.unknown
         reject(new FetchError(0, statusText, message, error))
       })
   })
@@ -111,43 +138,30 @@ const fetchWithTimeout = function fetchWithTimeout(
 const fetchRetry = async function fetchRetry(
   url: string,
   options: SHCRequestInit,
-  retries: number = 3
+  maximumRetries: number = 3
 ): Promise<Response> {
   try {
     const response = await fetchWithTimeout(url, options)
-    if (!response.ok) {
-      const {statusText, message} = ERRORS_DETAILS[response.status] || ERRORS_DETAILS.default
-      throw new FetchError(response.status, statusText, message)
-    }
-
+    if (!response.ok) handleHTTPError((response.status as ERRORS_TYPES) || "unknown")
     return response
   } catch (error) {
-    if (error instanceof FetchError && error.status === 408 && retries > 1)
-      return fetchRetry(url, options, retries - 1)
+    if (error instanceof FetchError && error.status === 408 && maximumRetries > 1)
+      return fetchRetry(url, options, maximumRetries - 1)
 
     if (error instanceof FetchError) {
-      if (retries <= 1) {
-        const {statusText, message} = ERRORS_DETAILS.retries
-        throw new FetchError(408, statusText, message, error as Error)
-      }
-
-      throw new FetchError(error.status, error.statusText, error.message, error)
+      if (maximumRetries <= 1)
+        return handleHTTPError("maximumRetries", error.statusText, error.message, error)
+      return handleHTTPError(error.status as ERRORS_TYPES, error.statusText, error.message, error)
     }
 
-    const {statusText, message} = ERRORS_DETAILS.default
-    throw new FetchError(0, statusText, message, error as Error)
+    return handleHTTPError("unknown")
   }
-}
-
-const handleHTTPError = function handleHTTPError(status: number) {
-  const {statusText, message} = ERRORS_DETAILS[status] || ERRORS_DETAILS.default
-  throw new FetchError(status, statusText, message)
 }
 
 export const shcFetch = async function shcFetch<TResponse, TRequestBody = undefined>(
   resource: string,
   options: FetchOptions<TRequestBody> = {},
-  retries: number = 3
+  maximumRetries: number = 3
 ): Promise<TResponse> {
   const {headers, timeout, ...optionsRest} = options
   const headersMerged: HeadersInit = {...HEADERS_DEFAULT, ...headers}
@@ -160,21 +174,16 @@ export const shcFetch = async function shcFetch<TResponse, TRequestBody = undefi
   }
 
   try {
-    const response = await fetchRetry(`${URL_BASE}${resource}`, requestOptions, retries)
-    if (!response.ok) handleHTTPError(response.status)
+    const response = await fetchRetry(`${URL_BASE}${resource}`, requestOptions, maximumRetries)
+    if (!response.ok) handleHTTPError((response.status as ERRORS_TYPES) || "unknown")
 
     const data: TResponse = await response.json()
     return data
   } catch (error) {
-    if (error instanceof FetchError) {
-      console.error(`FETCH_ERROR: ${error.message}`, {cause: error.cause})
-      throw error
-    } else {
-      const {statusText, message} = ERRORS_DETAILS.default
-      const fetchError = new FetchError(0, statusText, message, error as Error)
-      console.error(error, "UNKNOWN_ERROR:", fetchError)
-      throw fetchError
-    }
+    const status = error instanceof FetchError ? (error.status as ERRORS_TYPES) : "unknown"
+    const statusText = error instanceof FetchError ? error.statusText : undefined
+    const message = error instanceof FetchError ? error.message : undefined
+    return handleHTTPError(status, statusText, message, error as Error)
   }
 }
 
