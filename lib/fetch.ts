@@ -1,4 +1,4 @@
-// DONE REVIEWING: GITHUB COMMIT 1️⃣1️⃣
+// DONE REVIEWING: GITHUB COMMIT
 /* eslint no-console: "off" */
 /* eslint no-undef: "off" */
 

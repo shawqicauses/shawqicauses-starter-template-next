@@ -1,6 +1,6 @@
 "use client"
 
-// DONE REVIEWING: GITHUB COMMIT 1️⃣
+// DONE REVIEWING: GITHUB COMMIT
 
 import {QueryClient, QueryClientProvider} from "@tanstack/react-query"
 import {httpBatchLink} from "@trpc/client"
