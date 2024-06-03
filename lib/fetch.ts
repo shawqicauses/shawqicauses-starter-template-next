@@ -1,4 +1,4 @@
-// DONE REVIEWING: GITHUB COMMIT 9️⃣
+// DONE REVIEWING: GITHUB COMMIT 1️⃣0️⃣
 /* eslint no-console: "off" */
 /* eslint no-undef: "off" */
 
@@ -105,7 +105,7 @@ const handleHTTPError = function handleHTTPError(
   const errorStatusText = statusText || statusTextDefault
   const errorMessage = message || messageDefault
   const fetchError = new FetchError(errorStatus, errorStatusText, errorMessage, cause)
-  console.log(`${type}:${errorMessage}`, fetchError)
+  console.error(`${type}:${errorMessage}`, fetchError)
   throw fetchError
 }
 
@@ -175,8 +175,6 @@ export const shcFetch = async function shcFetch<TResponse, TRequestBody = undefi
 
   try {
     const response = await fetchRetry(`${URL_BASE}${resource}`, requestOptions, maximumRetries)
-    if (!response.ok) handleHTTPError((response.status as ERRORS_TYPES) || "unknown")
-
     const data: TResponse = await response.json()
     return data
   } catch (error) {
