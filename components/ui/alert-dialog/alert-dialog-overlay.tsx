@@ -1,4 +1,4 @@
-// DONE REVIEWING: GITHUB COMMIT 1️⃣
+// DONE REVIEWING: GITHUB COMMIT 2️⃣
 import * as AlertDialogPrimitive from "@radix-ui/react-alert-dialog"
 import {ComponentPropsWithoutRef, ElementRef, forwardRef} from "react"
 import {cn} from "../../../lib/utils"
@@ -10,7 +10,7 @@ const AlertDialogOverlay = forwardRef<
   <AlertDialogPrimitive.Overlay
     ref={ref}
     className={cn(
-      `bg-background/80 fixed inset-0 z-50 data-[${["state", "open"].join("=")}]:animate-in data-[${["state", "closed"].join("=")}]:animate-out data-[${["state", "closed"].join("=")}]:fade-out-0 data-[${["state", "open"].join("=")}]:fade-in-0`,
+      `fixed inset-0 z-50 bg-black/80 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0`,
       className
     )}
     {...props}
