@@ -1,4 +1,4 @@
-// DONE REVIEWING: GITHUB COMMIT 2️⃣
+// DONE REVIEWING: GITHUB COMMIT
 export {default as AlertDialog} from "./alert-dialog"
 export {default as AlertDialogAction} from "./alert-dialog/alert-dialog-action"
 export {default as AlertDialogCancel} from "./alert-dialog/alert-dialog-cancel"

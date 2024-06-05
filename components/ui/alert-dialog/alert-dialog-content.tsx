@@ -1,4 +1,4 @@
-// DONE REVIEWING: GITHUB COMMIT 3️⃣
+// DONE REVIEWING: GITHUB COMMIT
 import * as AlertDialogPrimitive from "@radix-ui/react-alert-dialog"
 import {ComponentPropsWithoutRef, ElementRef, forwardRef} from "react"
 import {AlertDialogPortal} from "."

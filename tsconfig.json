@@ -1,5 +1,5 @@
 {
-  "reviewed": "true 2️⃣",
+  "reviewed": "true",
   "compilerOptions": {
     "target": "ES5",
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
