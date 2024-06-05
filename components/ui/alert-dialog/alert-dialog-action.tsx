@@ -1,4 +1,4 @@
-// DONE REVIEWING: GITHUB COMMIT
+// DONE REVIEWING: GITHUB COMMIT 1️⃣
 import * as AlertDialogPrimitive from "@radix-ui/react-alert-dialog"
 import {ComponentPropsWithoutRef, ElementRef, forwardRef} from "react"
 import {cn} from "../../../lib/utils"
@@ -11,5 +11,5 @@ const AlertDialogAction = forwardRef<
   <AlertDialogPrimitive.Action ref={ref} className={cn(buttonVariants(), className)} {...props} />
 ))
 
-AlertDialogAction.displayName = "AlertDialogAction"
+AlertDialogAction.displayName = AlertDialogPrimitive.Action.displayName
 export default AlertDialogAction

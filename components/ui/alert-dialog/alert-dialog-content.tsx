@@ -1,4 +1,4 @@
-// DONE REVIEWING: GITHUB COMMIT
+// DONE REVIEWING: GITHUB COMMIT 1️⃣
 import * as AlertDialogPrimitive from "@radix-ui/react-alert-dialog"
 import {ComponentPropsWithoutRef, ElementRef, forwardRef} from "react"
 import {AlertDialogPortal} from "."
@@ -22,5 +22,5 @@ const AlertDialogContent = forwardRef<
   </AlertDialogPortal>
 ))
 
-AlertDialogContent.displayName = "AlertDialogContent"
+AlertDialogContent.displayName = AlertDialogPrimitive.Content.displayName
 export default AlertDialogContent
