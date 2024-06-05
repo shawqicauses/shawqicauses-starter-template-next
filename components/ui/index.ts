@@ -1,4 +1,5 @@
-// DONE REVIEWING: GITHUB COMMIT
+// DONE REVIEWING: GITHUB COMMIT 1️⃣
+export {default as AlertDialog} from "./alert-dialog"
 export {default as Button} from "./button"
 export {default as Form} from "./form"
 export {default as FormControl} from "./form/form-control"
