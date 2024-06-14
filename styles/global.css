@@ -1,4 +1,4 @@
-/* DONE REVIEWING: GITHUB COMMIT 7️⃣ */
+/* DONE REVIEWING: GITHUB COMMIT 8️⃣ */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,12 +10,17 @@
 }
 
 @layer components {
+  /* Form Component */
   .shc-label-base {
-    @apply text-sm font-medium leading-none peer-disabled:pointer-events-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70;
+    @apply block text-sm font-medium leading-6 text-foreground peer-disabled:pointer-events-none peer-disabled:cursor-not-allowed peer-disabled:opacity-50;
   }
 
-  .shc-body-inline-base {
-    @apply text-sm font-normal leading-normal;
+  .shc-description-base {
+    @apply mt-2 text-sm;
+  }
+
+  .shc-input-base {
+    @apply shc-transition bg-foreground/5 flex w-full rounded-md border-0 px-2.5 py-1.5 text-sm leading-6 text-foreground shadow-sm outline-none ring-1 ring-inset ring-input file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-foreground disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50;
   }
 
   /* Card Component */
@@ -43,33 +48,9 @@
     @apply flex items-center space-x-1 border-t border-border px-4 py-5 sm:px-6;
   }
 
-  .shc-form-disabled-style {
-    @apply disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50;
-  }
-
-  .shc-form-focus-style {
-    @apply [&:is(.shc-button-primary,.shc-button-secondary)]:focus-visible:ring-no-inset focus-visible:outline-none focus-visible:ring-ring [&:is(.shc-button-link)]:focus-visible:decoration-primary [&:is(.shc-button-primary,.shc-button-secondary)]:focus-visible:ring-offset-2 [&:is(.shc-button-primary,.shc-button-secondary)]:focus-visible:ring-offset-background [&:is(:not(.shc-button-primary,.shc-button-secondary,.shc-button-outline))]:focus-visible:ring-2;
-  }
-
-  .shc-input-typography-style {
-    @apply text-sm font-medium leading-normal placeholder:font-normal placeholder:text-muted-foreground;
-  }
-
-  .shc-input-file-style {
-    @apply file:border-0 file:bg-transparent file:text-sm file:font-medium;
-  }
-
-  .shc-input-base {
-    @apply shc-flex-middle-start shc-card shc-form-disabled-style shc-form-focus-style shc-input-typography-style shc-input-file-style shc-transition w-full;
-  }
-
-  .shc-button-typography-style {
-    @apply whitespace-nowrap text-sm font-medium leading-[1.25rem];
-  }
-
   /* Button Component */
   .shc-button-base {
-    @apply shc-transition [&:is(.shc-button-primary,.shc-button-secondary)]:focus-visible:ring-no-inset inline-flex items-center justify-center whitespace-nowrap text-sm font-medium leading-[1.25rem] outline-none disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-75 [&:is(.shc-button-outline)]:focus-visible:ring-foreground [&:is(.shc-button-primary,.shc-button-secondary)]:text-white [&:is(.shc-button-primary,.shc-button-secondary)]:focus-visible:ring-foreground [&:is(.shc-button-primary,.shc-button-secondary)]:focus-visible:ring-offset-2 [&:is(.shc-button-primary,.shc-button-secondary)]:focus-visible:ring-offset-background [&:is(:not(.shc-button-link))]:rounded-md [&:is(:not(.shc-button-link))]:ring-1 [&:is(:not(.shc-button-link))]:ring-inset;
+    @apply shc-transition [&:is(.shc-button-primary,.shc-button-secondary)]:focus-visible:ring-no-inset inline-flex items-center justify-center whitespace-nowrap text-sm font-medium leading-[1.25rem] shadow-sm outline-none disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 [&:is(.shc-button-outline)]:focus-visible:ring-foreground [&:is(.shc-button-primary,.shc-button-secondary)]:text-white [&:is(.shc-button-primary,.shc-button-secondary)]:focus-visible:ring-foreground [&:is(.shc-button-primary,.shc-button-secondary)]:focus-visible:ring-offset-2 [&:is(.shc-button-primary,.shc-button-secondary)]:focus-visible:ring-offset-background [&:is(:not(.shc-button-link))]:rounded-md [&:is(:not(.shc-button-link))]:ring-1 [&:is(:not(.shc-button-link))]:ring-inset;
   }
 
   .shc-button-primary {

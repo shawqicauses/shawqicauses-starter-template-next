@@ -1,7 +1,8 @@
-// DONE REVIEWING: GITHUB COMMIT 4️⃣
+// DONE REVIEWING: GITHUB COMMIT 5️⃣
 
 /* eslint import/no-extraneous-dependencies: "off" */
 
+import tailwindCSSForms from "@tailwindcss/forms"
 import typographyPlugin from "@tailwindcss/typography"
 import {type Config} from "tailwindcss"
 import tailwindCSSAnimate from "tailwindcss-animate"
@@ -258,6 +259,7 @@ export default {
   plugins: [
     typographyPlugin,
     tailwindCSSAnimate,
+    tailwindCSSForms,
     plugin(({addBase}) => {
       addBase({
         ":root": {
