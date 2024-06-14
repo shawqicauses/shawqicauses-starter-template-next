@@ -1,11 +1,13 @@
-// DONE REVIEWING: GITHUB COMMIT 1️⃣
+// DONE REVIEWING: GITHUB COMMIT 2️⃣
 
 /* eslint import/no-extraneous-dependencies: "off" */
 
 import typographyPlugin from "@tailwindcss/typography"
 import {type Config} from "tailwindcss"
 import tailwindCSSAnimate from "tailwindcss-animate"
+import colors from "tailwindcss/colors"
 import {parseColor} from "tailwindcss/lib/util/color"
+import plugin from "tailwindcss/plugin"
 import typographyStyles from "./styles/typography"
 
 export const toRGB = function toRGB(value: string): string {
@@ -246,5 +248,39 @@ export default {
     },
     typography: typographyStyles
   },
-  plugins: [typographyPlugin, tailwindCSSAnimate]
+  plugins: [
+    typographyPlugin,
+    tailwindCSSAnimate,
+    plugin(({addBase}) => {
+      addBase({
+        ":root": {
+          "--background": toRGB(colors.white),
+          "--foreground": toRGB(colors.zinc["950"]),
+
+          "--border-light": toRGB(colors.zinc["100"]),
+          "--border": toRGB(colors.zinc["200"]),
+          "--ring": toRGB(colors.zinc["400"]),
+          "--input": toRGB(colors.zinc["200"]),
+
+          "--primary": toRGB(colors.red["500"]),
+          "--primary-light": toRGB(colors.red["400"]),
+          "--primary-dark": toRGB(colors.red["600"]),
+          "--primary-foreground": toRGB(colors.red["50"]),
+
+          "--secondary": toRGB(colors.indigo["500"]),
+          "--secondary-light": toRGB(colors.indigo["400"]),
+          "--secondary-dark": toRGB(colors.indigo["600"]),
+          "--secondary-foreground": toRGB(colors.indigo["50"]),
+
+          "--accent": toRGB(colors.zinc["900"]),
+          "--accent-light": toRGB(colors.zinc["800"]),
+          "--accent-dark": toRGB(colors.zinc["950"]),
+          "--accent-foreground": toRGB(colors.zinc["100"]),
+
+          "--muted": toRGB(colors.zinc["100"]),
+          "--muted-foreground": toRGB(colors.zinc["500"])
+        }
+      })
+    })
+  ]
 } satisfies Config
