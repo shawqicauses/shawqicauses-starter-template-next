@@ -1,4 +1,4 @@
-/* DONE REVIEWING: GITHUB COMMIT 4️⃣ */
+/* DONE REVIEWING: GITHUB COMMIT 5️⃣ */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -27,7 +27,7 @@
   }
 
   .shc-form-focus-style {
-    @apply [&:is(.shc-button-primary,.shc-button-secondary)]:focus-visible:ring-inset-none focus-visible:outline-none focus-visible:ring-ring [&:is(.shc-button-link)]:focus-visible:decoration-primary [&:is(.shc-button-primary,.shc-button-secondary)]:focus-visible:ring-offset-2 [&:is(.shc-button-primary,.shc-button-secondary)]:focus-visible:ring-offset-background [&:is(:not(.shc-button-primary,.shc-button-secondary,.shc-button-outline))]:focus-visible:ring-2;
+    @apply [&:is(.shc-button-primary,.shc-button-secondary)]:focus-visible:ring-no-inset focus-visible:outline-none focus-visible:ring-ring [&:is(.shc-button-link)]:focus-visible:decoration-primary [&:is(.shc-button-primary,.shc-button-secondary)]:focus-visible:ring-offset-2 [&:is(.shc-button-primary,.shc-button-secondary)]:focus-visible:ring-offset-background [&:is(:not(.shc-button-primary,.shc-button-secondary,.shc-button-outline))]:focus-visible:ring-2;
   }
 
   .shc-input-typography-style {
@@ -46,24 +46,25 @@
     @apply whitespace-nowrap text-sm font-medium leading-[1.25rem];
   }
 
+  /* Button Component */
   .shc-button-base {
-    @apply shc-flex-center shc-card shc-form-disabled-style shc-form-focus-style shc-button-typography-style shc-transition;
+    @apply shc-transition [&:is(.shc-button-primary,.shc-button-secondary)]:focus-visible:ring-no-inset inline-flex items-center justify-center whitespace-nowrap text-sm font-medium leading-[1.25rem] outline-none [&:is(.shc-button-outline)]:focus-visible:ring-foreground [&:is(.shc-button-primary,.shc-button-secondary)]:text-white [&:is(.shc-button-primary,.shc-button-secondary)]:focus-visible:ring-foreground [&:is(.shc-button-primary,.shc-button-secondary)]:focus-visible:ring-offset-2 [&:is(.shc-button-primary,.shc-button-secondary)]:focus-visible:ring-offset-background [&:is(:not(.shc-button-link))]:rounded-md [&:is(:not(.shc-button-link))]:ring-1 [&:is(:not(.shc-button-link))]:ring-inset;
   }
 
   .shc-button-primary {
-    @apply hover:bg-primary-dark hover:ring-primary-dark bg-primary text-primary-foreground ring-primary;
+    @apply hover:bg-primary-dark hover:ring-primary-dark bg-primary ring-primary;
   }
 
   .shc-button-secondary {
-    @apply hover:bg-secondary-dark hover:ring-secondary-dark bg-secondary text-secondary-foreground ring-secondary;
+    @apply hover:bg-secondary-dark hover:ring-secondary-dark bg-secondary ring-secondary;
   }
 
   .shc-button-outline {
-    @apply bg-background ring-input hover:bg-accent hover:text-accent-foreground hover:ring-accent;
+    @apply bg-background ring-input hover:bg-input;
   }
 
   .shc-button-link {
-    @apply !rounded-none text-foreground underline decoration-1 underline-offset-4 !ring-0;
+    @apply underline decoration-input decoration-1 underline-offset-2 hover:decoration-foreground focus-visible:decoration-foreground;
   }
 
   .shc-button-normal {
@@ -79,12 +80,12 @@
   }
 
   .shc-button-icon {
-    @apply h-10 w-10;
+    @apply h-8 w-8;
   }
 }
 
 @layer utilities {
-  .ring-inset-none {
+  .ring-no-inset {
     --tw-ring-inset: ;
   }
 
@@ -97,6 +98,6 @@
   }
 
   .shc-transition {
-    @apply transition-colors duration-100 ease-linear;
+    @apply transition-all duration-100 ease-linear;
   }
 }
