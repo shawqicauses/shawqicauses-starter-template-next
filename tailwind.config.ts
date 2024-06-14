@@ -1,4 +1,4 @@
-// DONE REVIEWING: GITHUB COMMIT 2️⃣
+// DONE REVIEWING: GITHUB COMMIT 3️⃣
 
 /* eslint import/no-extraneous-dependencies: "off" */
 
@@ -279,6 +279,33 @@ export default {
 
           "--muted": toRGB(colors.zinc["100"]),
           "--muted-foreground": toRGB(colors.zinc["500"])
+        },
+        ".dark": {
+          "--background": toRGB(colors.zinc["950"]),
+          "--foreground": toRGB(colors.zinc["50"]),
+
+          "--border-light": toRGB(colors.zinc["900"]),
+          "--border": toRGB(colors.zinc["800"]),
+          "--ring": toRGB(colors.zinc["300"]),
+          "--input": toRGB(colors.zinc["800"]),
+
+          "--primary": toRGB(colors.red["400"]),
+          "--primary-light": toRGB(colors.red["300"]),
+          "--primary-dark": toRGB(colors.red["500"]),
+          "--primary-foreground": toRGB(colors.red["950"]),
+
+          "--secondary": toRGB(colors.indigo["400"]),
+          "--secondary-light": toRGB(colors.indigo["300"]),
+          "--secondary-dark": toRGB(colors.indigo["500"]),
+          "--secondary-foreground": toRGB(colors.indigo["950"]),
+
+          "--accent": toRGB(colors.zinc["50"]),
+          "--accent-light": toRGB(colors.white),
+          "--accent-dark": toRGB(colors.zinc["100"]),
+          "--accent-foreground": toRGB(colors.zinc["950"]),
+
+          "--muted": toRGB(colors.zinc["800"]),
+          "--muted-foreground": toRGB(colors.zinc["400"])
         }
       })
     })
