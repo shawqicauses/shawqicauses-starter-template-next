@@ -1,4 +1,4 @@
-/* DONE REVIEWING: GITHUB COMMIT 3️⃣ */
+/* DONE REVIEWING: GITHUB COMMIT 4️⃣ */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -19,7 +19,7 @@
   }
 
   .shc-card {
-    @apply rounded-md border-0 bg-background-layer-2 shadow-sm ring-1 ring-inset ring-border;
+    @apply rounded-md border-0 bg-muted shadow-sm ring-1 ring-inset ring-border;
   }
 
   .shc-form-disabled-style {
