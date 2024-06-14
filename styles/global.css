@@ -1,4 +1,4 @@
-/* DONE REVIEWING: GITHUB COMMIT 5️⃣ */
+/* DONE REVIEWING: GITHUB COMMIT 6️⃣ */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -18,8 +18,29 @@
     @apply text-sm font-normal leading-normal;
   }
 
+  /* Card Component */
   .shc-card {
-    @apply rounded-md border-0 bg-muted shadow-sm ring-1 ring-inset ring-border;
+    @apply rounded-md border border-border bg-background text-foreground shadow-sm;
+  }
+
+  .shc-card-header {
+    @apply flex flex-col space-y-1 border-b border-border px-4 py-5 sm:px-6;
+  }
+
+  .shc-card-title {
+    @apply text-base font-semi-bold leading-none text-foreground sm:text-lg sm:leading-none;
+  }
+
+  .shc-card-description {
+    @apply text-sm text-muted-foreground;
+  }
+
+  .shc-card-content {
+    @apply px-4 py-5 sm:px-6;
+  }
+
+  .shc-card-footer {
+    @apply flex items-center space-x-1 border-t border-border px-4 py-5 sm:px-6;
   }
 
   .shc-form-disabled-style {
