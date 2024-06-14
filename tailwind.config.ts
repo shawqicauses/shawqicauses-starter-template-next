@@ -1,4 +1,4 @@
-// DONE REVIEWING: GITHUB COMMIT 3️⃣
+// DONE REVIEWING: GITHUB COMMIT 4️⃣
 
 /* eslint import/no-extraneous-dependencies: "off" */
 
@@ -36,27 +36,34 @@ export default {
     },
     extend: {
       colors: {
-        "background": "var(--background)",
-        "background-layer-2": "var(--background-layer-2)",
-        "foreground": "var(--foreground)",
-        "border": "var(--border)",
-        "border-light": "var(--border-light)",
-        "ring": "var(--ring)",
-        "input": "var(--input)",
+        "background": "rgb(var(--background) / <alpha-value>)",
+        "foreground": "rgb(var(--foreground) / <alpha-value>)",
+        "border": "rgb(var(--border) / <alpha-value>)",
+        "border-light": "rgb(var(--border-light) / <alpha-value>)",
+        "ring": "rgb(var(--ring) / <alpha-value>)",
+        "input": "rgb(var(--input) / <alpha-value>)",
         "primary": {
-          DEFAULT: "var(--primary)",
-          hover: "var(--primary-hover)",
-          foreground: "var(--primary-foreground)"
+          DEFAULT: "rgb(var(--primary) / <alpha-value>)",
+          light: "rgb(var(--primary-light) / <alpha-value>)",
+          dark: "rgb(var(--primary-dark) / <alpha-value>)",
+          foreground: "rgb(var(--primary-foreground) / <alpha-value>)"
         },
         "secondary": {
-          DEFAULT: "var(--secondary)",
-          hover: "var(--secondary-hover)",
-          foreground: "var(--secondary-foreground)"
+          DEFAULT: "rgb(var(--secondary) / <alpha-value>)",
+          light: "rgb(var(--secondary-light) / <alpha-value>)",
+          dark: "rgb(var(--secondary-dark) / <alpha-value>)",
+          foreground: "rgb(var(--secondary-foreground) / <alpha-value>)"
         },
-        "accent": {DEFAULT: "var(--accent)", foreground: "var(--accent-foreground)"},
-        "muted": {DEFAULT: "var(--muted)", foreground: "var(--muted-foreground)"},
-        "card": {DEFAULT: "var(--card)", foreground: "var(--card-foreground)"},
-        "popover": {DEFAULT: "var(--popover)", foreground: "var(--popover-foreground)"}
+        "accent": {
+          DEFAULT: "rgb(var(--accent) / <alpha-value>)",
+          light: "rgb(var(--accent-light) / <alpha-value>)",
+          dark: "rgb(var(--accent-dark) / <alpha-value>)",
+          foreground: "rgb(var(--accent-foreground) / <alpha-value>)"
+        },
+        "muted": {
+          DEFAULT: "rgb(var(--muted) / <alpha-value>)",
+          foreground: "rgb(var(--muted-foreground) / <alpha-value>)"
+        }
       },
       keyframes: {
         "accordion-down": {

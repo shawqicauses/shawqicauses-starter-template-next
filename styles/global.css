@@ -1,4 +1,4 @@
-/* DONE REVIEWING: GITHUB COMMIT 2️⃣ */
+/* DONE REVIEWING: GITHUB COMMIT 3️⃣ */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -51,11 +51,11 @@
   }
 
   .shc-button-primary {
-    @apply bg-primary text-primary-foreground ring-primary hover:bg-primary-hover hover:ring-primary-hover;
+    @apply hover:bg-primary-dark hover:ring-primary-dark bg-primary text-primary-foreground ring-primary;
   }
 
   .shc-button-secondary {
-    @apply bg-secondary text-secondary-foreground ring-secondary hover:bg-secondary-hover hover:ring-secondary-hover;
+    @apply hover:bg-secondary-dark hover:ring-secondary-dark bg-secondary text-secondary-foreground ring-secondary;
   }
 
   .shc-button-outline {
