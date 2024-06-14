@@ -1,8 +1,16 @@
-// DONE REVIEWING: GITHUB COMMIT
+// DONE REVIEWING: GITHUB COMMIT 1️⃣
+
+/* eslint import/no-extraneous-dependencies: "off" */
+
 import typographyPlugin from "@tailwindcss/typography"
 import {type Config} from "tailwindcss"
 import tailwindCSSAnimate from "tailwindcss-animate"
+import {parseColor} from "tailwindcss/lib/util/color"
 import typographyStyles from "./styles/typography"
+
+export const toRGB = function toRGB(value: string): string {
+  return parseColor(value).color.join(" ")
+}
 
 export default {
   darkMode: ["class"],
