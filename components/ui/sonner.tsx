@@ -1,6 +1,6 @@
 "use client"
 
-// DONE REVIEWING: GITHUB COMMIT 2️⃣
+// DONE REVIEWING: GITHUB COMMIT 3️⃣
 
 import {useTheme} from "next-themes"
 import {ComponentProps} from "react"
@@ -15,14 +15,14 @@ const Toaster = function Toaster({...props}: ToasterProps) {
       theme={theme as ToasterProps["theme"]}
       toastOptions={{
         classNames: {
-          toast:
-            "group toast group-[.toaster]:bg-background group-[.toaster]:text-foreground group-[.toaster]:border-border group-[.toaster]:shadow-lg",
-          description: "group-[.toast]:text-muted-foreground",
-          actionButton: "group-[.toast]:bg-primary group-[.toast]:text-primary-foreground",
-          cancelButton: "group-[.toast]:bg-muted group-[.toast]:text-muted-foreground"
+          toast: "toast group shc-toast-base",
+          title: "shc-toast-title-base",
+          description: "shc-toast-description-base",
+          actionButton: "peer shc-toast-action-button-base",
+          cancelButton: "peer shc-toast-cancel-button-base"
         }
       }}
-      className="toaster group"
+      className="toaster group !font-[inherit]"
       {...props}
     />
   )

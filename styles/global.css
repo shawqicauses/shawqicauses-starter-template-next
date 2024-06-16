@@ -1,4 +1,4 @@
-/* DONE REVIEWING: GITHUB COMMIT 1️⃣0️⃣ */
+/* DONE REVIEWING: GITHUB COMMIT 1️⃣1️⃣ */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,6 +10,27 @@
 }
 
 @layer components {
+  /* Sonner */
+  .shc-toast-base {
+    @apply !border-border !bg-background !text-foreground !shadow-lg !outline-none focus-visible:!ring-2 focus-visible:!ring-inset focus-visible:!ring-foreground;
+  }
+
+  .shc-toast-title-base {
+    @apply !block !text-sm !font-medium !leading-6 !text-foreground;
+  }
+
+  .shc-toast-description-base {
+    @apply !text-xs !text-muted-foreground;
+  }
+
+  .shc-toast-action-button-base {
+    @apply focus-visible:!ring-no-inset !ml-auto !inline-flex !h-auto !items-center !justify-center !whitespace-nowrap !rounded-md !bg-accent !px-2 !py-1 !text-xs !font-medium !leading-[1.25rem] !text-accent-foreground !outline-none !ring-1 !ring-inset !ring-accent !transition-all !duration-100 !ease-linear hover:!bg-accent-dark hover:!ring-accent-dark focus-visible:!ring-foreground focus-visible:!ring-offset-2 focus-visible:!ring-offset-background disabled:!pointer-events-none disabled:!cursor-not-allowed disabled:!opacity-50 peer-[.shc-toast-cancel-button-base]:!ml-0;
+  }
+
+  .shc-toast-cancel-button-base {
+    @apply focus-visible:!ring-no-inset !ml-auto inline-flex !h-auto !items-center !justify-center !whitespace-nowrap !rounded-md !bg-background !px-2 !py-1 !text-xs !font-medium !leading-[1.25rem] !text-foreground !outline-none !ring-1 !ring-inset !ring-input !transition-all !duration-100 !ease-linear hover:!bg-input focus-visible:!ring-foreground focus-visible:!ring-offset-2 focus-visible:!ring-offset-background disabled:!pointer-events-none disabled:!cursor-not-allowed disabled:!opacity-50;
+  }
+
   /* Card Component */
   .shc-card {
     @apply rounded-md border border-border bg-background text-foreground shadow-sm;
