@@ -1,4 +1,4 @@
-/* DONE REVIEWING: GITHUB COMMIT 9️⃣ */
+/* DONE REVIEWING: GITHUB COMMIT 1️⃣0️⃣ */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -10,27 +10,6 @@
 }
 
 @layer components {
-  /* Form Component */
-  .shc-label-base {
-    @apply block text-sm font-medium leading-6 text-foreground peer-disabled:pointer-events-none peer-disabled:cursor-not-allowed peer-disabled:opacity-50;
-  }
-
-  .shc-description-base {
-    @apply mt-2 text-sm;
-  }
-
-  .shc-input-base {
-    @apply shc-transition bg-foreground/5 flex w-full rounded-md border-0 px-2.5 py-1.5 text-sm leading-6 text-foreground shadow-sm outline-none ring-1 ring-inset ring-input file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-foreground disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50;
-  }
-
-  .shc-switch-base {
-    @apply shc-transition inline-flex h-6 w-11 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent outline-none focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=unchecked]:bg-muted;
-  }
-
-  .shc-switch-thumb-base {
-    @apply shc-transition pointer-events-none inline-block h-5 w-5 rounded-full bg-background shadow-sm ring-0 data-[state=checked]:translate-x-5 data-[state=unchecked]:translate-x-0;
-  }
-
   /* Card Component */
   .shc-card {
     @apply rounded-md border border-border bg-background text-foreground shadow-sm;
@@ -56,17 +35,38 @@
     @apply flex items-center space-x-1 border-t border-border px-4 py-5 sm:px-6;
   }
 
+  /* Form Component */
+  .shc-label-base {
+    @apply block text-sm font-medium leading-6 text-foreground peer-disabled:pointer-events-none peer-disabled:cursor-not-allowed peer-disabled:opacity-50;
+  }
+
+  .shc-description-base {
+    @apply mt-2 text-sm;
+  }
+
+  .shc-input-base {
+    @apply shc-transition flex w-full rounded-md border-0 bg-foreground/5 px-2.5 py-1.5 text-sm leading-6 text-foreground shadow-sm outline-none ring-1 ring-inset ring-input file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-foreground disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50;
+  }
+
+  .shc-switch-base {
+    @apply shc-transition inline-flex h-6 w-11 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent outline-none focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=unchecked]:bg-muted;
+  }
+
+  .shc-switch-thumb-base {
+    @apply shc-transition pointer-events-none inline-block h-5 w-5 rounded-full bg-background shadow-sm ring-0 data-[state=checked]:translate-x-5 data-[state=unchecked]:translate-x-0;
+  }
+
   /* Button Component */
   .shc-button-base {
     @apply shc-transition [&:is(.shc-button-primary,.shc-button-secondary)]:focus-visible:ring-no-inset inline-flex items-center justify-center whitespace-nowrap text-sm font-medium leading-[1.25rem] shadow-sm outline-none disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 [&:is(.shc-button-outline)]:focus-visible:ring-foreground [&:is(.shc-button-primary,.shc-button-secondary)]:text-white [&:is(.shc-button-primary,.shc-button-secondary)]:focus-visible:ring-foreground [&:is(.shc-button-primary,.shc-button-secondary)]:focus-visible:ring-offset-2 [&:is(.shc-button-primary,.shc-button-secondary)]:focus-visible:ring-offset-background [&:is(:not(.shc-button-link))]:rounded-md [&:is(:not(.shc-button-link))]:ring-1 [&:is(:not(.shc-button-link))]:ring-inset;
   }
 
   .shc-button-primary {
-    @apply hover:bg-primary-dark hover:ring-primary-dark bg-primary ring-primary;
+    @apply bg-primary ring-primary hover:bg-primary-dark hover:ring-primary-dark;
   }
 
   .shc-button-secondary {
-    @apply hover:bg-secondary-dark hover:ring-secondary-dark bg-secondary ring-secondary;
+    @apply bg-secondary ring-secondary hover:bg-secondary-dark hover:ring-secondary-dark;
   }
 
   .shc-button-outline {
