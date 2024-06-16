@@ -1,17 +1,17 @@
 "use client"
 
-// DONE REVIEWING: GITHUB COMMIT 1️⃣
+// DONE REVIEWING: GITHUB COMMIT 2️⃣
 
 import {useTheme} from "next-themes"
 import {ComponentProps} from "react"
-import {Toaster as Sooner} from "sooner"
+import {Toaster as Sonner} from "sonner"
 
-type ToasterProps = ComponentProps<typeof Sooner>
+type ToasterProps = ComponentProps<typeof Sonner>
 
 const Toaster = function Toaster({...props}: ToasterProps) {
   const {theme} = useTheme()
   return (
-    <Sooner
+    <Sonner
       theme={theme as ToasterProps["theme"]}
       toastOptions={{
         classNames: {
@@ -28,4 +28,5 @@ const Toaster = function Toaster({...props}: ToasterProps) {
   )
 }
 
+export {Toaster}
 export default Toaster

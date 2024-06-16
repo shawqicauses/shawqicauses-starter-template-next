@@ -1,12 +1,12 @@
 "use client"
 
-// DONE REVIEWING: GITHUB COMMIT 1️⃣
+// DONE REVIEWING: GITHUB COMMIT 2️⃣
 
 import {QueryClient, QueryClientProvider} from "@tanstack/react-query"
 import {httpBatchLink} from "@trpc/client"
 import {PropsWithChildren, useState} from "react"
 import trpc from "../client"
-import Toaster from "../components/ui/sooner"
+import {Toaster} from "../components/ui"
 
 const createQueryClient = function createQueryClient() {
   return new QueryClient({
