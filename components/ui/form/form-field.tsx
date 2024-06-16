@@ -1,5 +1,3 @@
-"use client"
-
 // DONE REVIEWING: GITHUB COMMIT
 
 import {createContext, useContext, useMemo} from "react"

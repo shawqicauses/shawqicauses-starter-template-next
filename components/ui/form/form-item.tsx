@@ -1,5 +1,3 @@
-"use client"
-
 // DONE REVIEWING: GITHUB COMMIT
 
 import {HTMLAttributes, createContext, forwardRef, useId, useMemo} from "react"
