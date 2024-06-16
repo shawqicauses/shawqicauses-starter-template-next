@@ -1,6 +1,6 @@
 "use client"
 
-// DONE REVIEWING: GITHUB COMMIT 1️⃣
+// DONE REVIEWING: GITHUB COMMIT 2️⃣
 
 import * as AlertDialogPrimitive from "@radix-ui/react-alert-dialog"
 import {ComponentPropsWithoutRef, ElementRef, forwardRef} from "react"
@@ -12,7 +12,7 @@ const AlertDialogDescription = forwardRef<
 >(({className, ...props}, ref) => (
   <AlertDialogPrimitive.Description
     ref={ref}
-    className={cn("text-sm text-muted-foreground", className)}
+    className={cn("shc-alert-dialog-description-base", className)}
     {...props}
   />
 ))

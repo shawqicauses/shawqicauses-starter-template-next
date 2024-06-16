@@ -1,6 +1,6 @@
 "use client"
 
-// DONE REVIEWING: GITHUB COMMIT 1️⃣
+// DONE REVIEWING: GITHUB COMMIT 2️⃣
 
 import * as AlertDialogPrimitive from "@radix-ui/react-alert-dialog"
 import {ComponentPropsWithoutRef, ElementRef, forwardRef} from "react"
@@ -13,7 +13,7 @@ const AlertDialogCancel = forwardRef<
 >(({className, ...props}, ref) => (
   <AlertDialogPrimitive.Cancel
     ref={ref}
-    className={cn(buttonVariants({variant: "outline"}), "mt-2 sm:mt-0", className)}
+    className={cn(buttonVariants({variant: "outline"}), "mt-2 bg-transparent sm:mt-0", className)}
     {...props}
   />
 ))
