@@ -1,4 +1,4 @@
-// DONE REVIEWING: GITHUB COMMIT 5️⃣
+// DONE REVIEWING: GITHUB COMMIT
 
 /* eslint import/no-extraneous-dependencies: "off" */
 

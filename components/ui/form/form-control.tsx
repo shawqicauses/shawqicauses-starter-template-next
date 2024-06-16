@@ -1,6 +1,6 @@
 "use client"
 
-// DONE REVIEWING: GITHUB COMMIT 1️⃣
+// DONE REVIEWING: GITHUB COMMIT
 
 import {Slot} from "@radix-ui/react-slot"
 import {ComponentPropsWithoutRef, ElementRef, forwardRef} from "react"

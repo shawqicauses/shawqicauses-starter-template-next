@@ -1,6 +1,6 @@
 "use client"
 
-// DONE REVIEWING: GITHUB COMMIT 1️⃣
+// DONE REVIEWING: GITHUB COMMIT
 
 import * as LabelPrimitive from "@radix-ui/react-label"
 import {VariantProps, cva} from "class-variance-authority"

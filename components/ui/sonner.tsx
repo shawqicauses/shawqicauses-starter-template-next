@@ -1,6 +1,6 @@
 "use client"
 
-// DONE REVIEWING: GITHUB COMMIT 3️⃣
+// DONE REVIEWING: GITHUB COMMIT
 
 import {useTheme} from "next-themes"
 import {ComponentProps} from "react"
