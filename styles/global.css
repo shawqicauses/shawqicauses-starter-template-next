@@ -4,127 +4,151 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    /* GROUNDS */
-    --background: theme(colors.white);
-    --background-layer-2: theme(colors.zinc.50);
-    --foreground: theme(colors.zinc.950);
-
-    /* DIVIDERS */
-    --border-light: theme(colors.zinc.100);
-    --border: theme(colors.zinc.200);
-    --ring: var(--foreground);
-    --input: var(--border);
-
-    /* BRANDS */
-    --primary: theme(colors.red.500);
-    --primary-hover: theme(colors.red.600);
-    --primary-foreground: theme(colors.red.50);
-    --secondary: theme(colors.indigo.500);
-    --secondary-hover: theme(colors.indigo.600);
-    --secondary-foreground: theme(colors.indigo.50);
-    --accent: var(--foreground);
-    --accent-foreground: var(--background-layer-2);
-
-    --muted: theme(colors.zinc.100);
-    --muted-foreground: theme(colors.zinc.600);
-
-    /* COMPONENTS */
-    --card: var(--background-layer-2);
-    --card-foreground: var(--foreground);
-
-    --popover: var(--background-layer-2);
-    --popover: var(--foreground);
-  }
-
-  .dark {
-    --background: theme(colors.zinc.950);
-    --background-layer-2: theme(colors.black);
-    --foreground: theme(colors.white);
-    --border-light: theme(colors.zinc.900);
-    --border: theme(colors.zinc.800);
-    --primary: theme(colors.red.400);
-    --primary-hover: theme(colors.red.500);
-    --secondary: theme(colors.indigo.400);
-    --secondary-hover: theme(colors.indigo.500);
+  body {
+    @apply bg-background text-foreground;
   }
 }
 
 @layer components {
-  .shc-label-base {
-    @apply text-sm font-medium leading-none peer-disabled:pointer-events-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70;
+  /* Sonner */
+  .shc-toast-base {
+    @apply !border-border !bg-background !text-foreground !shadow-lg !outline-none focus-visible:!ring-2 focus-visible:!ring-inset focus-visible:!ring-foreground;
   }
 
-  .shc-body-inline-base {
-    @apply text-sm font-normal leading-normal;
+  .shc-toast-title-base {
+    @apply !block !text-sm !font-medium !leading-6 !text-foreground;
   }
 
+  .shc-toast-description-base {
+    @apply !text-xs !text-muted-foreground;
+  }
+
+  .shc-toast-action-button-base {
+    @apply focus-visible:!ring-no-inset !ml-auto !inline-flex !h-auto !items-center !justify-center !whitespace-nowrap !rounded-md !bg-accent !px-2 !py-1 !text-xs !font-medium !leading-[1.25rem] !text-accent-foreground !outline-none !ring-1 !ring-inset !ring-accent !transition-all !duration-100 !ease-linear hover:!bg-accent-dark hover:!ring-accent-dark focus-visible:!ring-foreground focus-visible:!ring-offset-2 focus-visible:!ring-offset-background disabled:!pointer-events-none disabled:!cursor-not-allowed disabled:!opacity-50 peer-[.shc-toast-cancel-button-base]:!ml-0;
+  }
+
+  .shc-toast-cancel-button-base {
+    @apply focus-visible:!ring-no-inset !ml-auto inline-flex !h-auto !items-center !justify-center !whitespace-nowrap !rounded-md !bg-background !px-2 !py-1 !text-xs !font-medium !leading-[1.25rem] !text-foreground !outline-none !ring-1 !ring-inset !ring-input !transition-all !duration-100 !ease-linear hover:!bg-input focus-visible:!ring-foreground focus-visible:!ring-offset-2 focus-visible:!ring-offset-background disabled:!pointer-events-none disabled:!cursor-not-allowed disabled:!opacity-50;
+  }
+
+  /* Alert Dialog Component */
+  .shc-alert-dialog-overlay-base {
+    @apply fixed inset-0 z-10 bg-background/75 data-[state=open]:animate-in data-[sate=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0;
+  }
+
+  .shc-alert-dialog-content-base {
+    @apply fixed left-1/2 top-1/2 z-50 grid w-full max-w-lg -translate-x-1/2 -translate-y-1/2 overflow-hidden border border-border bg-background shadow-lg duration-100 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[sate=open]:zoom-in-95 data-[state=closed]:zoom-out-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-1/2 data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-1/2 [@media(min-width:32rem)]:rounded-lg;
+  }
+
+  .shc-alert-dialog-header-base {
+    @apply flex flex-col space-y-2 bg-background px-4 pb-4 pt-5 text-center sm:p-6 sm:pb-4 sm:text-left;
+  }
+
+  .shc-alert-dialog-title-base {
+    @apply text-base font-semi-bold leading-6 text-foreground;
+  }
+
+  .shc-alert-dialog-description-base {
+    @apply text-sm text-muted-foreground;
+  }
+
+  .shc-alert-dialog-footer-base {
+    @apply flex flex-col-reverse bg-muted/50 px-4 py-3 sm:flex-row sm:justify-end sm:space-x-2 sm:px-6;
+  }
+
+  /* Card Component */
   .shc-card {
-    @apply rounded-md border border-border bg-background-layer-2 px-3 py-2;
+    @apply rounded-md border border-border bg-background text-foreground shadow-sm;
   }
 
-  .shc-form-disabled-style {
-    @apply disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50;
+  .shc-card-header {
+    @apply flex flex-col space-y-1 border-b border-border px-4 py-5 sm:px-6;
   }
 
-  .shc-form-focus-style {
-    @apply ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
+  .shc-card-title {
+    @apply text-base font-semi-bold leading-none text-foreground sm:text-lg sm:leading-none;
   }
 
-  .shc-input-typography-style {
-    @apply text-sm font-medium leading-normal placeholder:font-normal placeholder:text-muted-foreground;
+  .shc-card-description {
+    @apply text-sm text-muted-foreground;
   }
 
-  .shc-input-file-style {
-    @apply file:border-0 file:bg-transparent file:text-sm file:font-medium;
+  .shc-card-content {
+    @apply px-4 py-5 sm:px-6;
+  }
+
+  .shc-card-footer {
+    @apply flex items-center space-x-1 border-t border-border px-4 py-5 sm:px-6;
+  }
+
+  /* Form Component */
+  .shc-label-base {
+    @apply block text-sm font-medium leading-6 text-foreground peer-disabled:pointer-events-none peer-disabled:cursor-not-allowed peer-disabled:opacity-50;
+  }
+
+  .shc-description-base {
+    @apply mt-2 text-sm;
   }
 
   .shc-input-base {
-    @apply shc-flex-middle-start shc-card shc-form-disabled-style shc-form-focus-style shc-input-typography-style shc-input-file-style shc-transition w-full;
+    @apply shc-transition flex w-full rounded-md border-0 bg-foreground/5 px-2.5 py-1.5 text-sm leading-6 text-foreground shadow-sm outline-none ring-1 ring-inset ring-input file:border-0 file:bg-transparent file:text-sm file:font-medium file:text-foreground placeholder:text-muted-foreground focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-foreground disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50;
   }
 
-  .shc-button-typography-style {
-    @apply whitespace-nowrap text-sm font-medium leading-[1.375rem];
+  .shc-switch-base {
+    @apply shc-transition inline-flex h-6 w-11 shrink-0 cursor-pointer items-center rounded-full border-2 border-transparent outline-none focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2 focus-visible:ring-offset-background disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=unchecked]:bg-muted;
   }
 
+  .shc-switch-thumb-base {
+    @apply shc-transition pointer-events-none inline-block h-5 w-5 rounded-full bg-background shadow-sm ring-0 data-[state=checked]:translate-x-5 data-[state=unchecked]:translate-x-0;
+  }
+
+  /* Button Component */
   .shc-button-base {
-    @apply shc-flex-center shc-card shc-form-disabled-style shc-form-focus-style shc-button-typography-style shc-transition;
+    @apply shc-transition [&:is(.shc-button-primary,.shc-button-secondary)]:focus-visible:ring-no-inset inline-flex items-center justify-center whitespace-nowrap text-sm font-medium leading-[1.25rem] shadow-sm outline-none disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 [&:is(.shc-button-outline)]:focus-visible:ring-foreground [&:is(.shc-button-primary,.shc-button-secondary)]:text-white [&:is(.shc-button-primary,.shc-button-secondary)]:focus-visible:ring-foreground [&:is(.shc-button-primary,.shc-button-secondary)]:focus-visible:ring-offset-2 [&:is(.shc-button-primary,.shc-button-secondary)]:focus-visible:ring-offset-background [&:is(:not(.shc-button-link))]:rounded-md [&:is(:not(.shc-button-link))]:ring-1 [&:is(:not(.shc-button-link))]:ring-inset;
   }
 
   .shc-button-primary {
-    @apply border-primary bg-primary text-primary-foreground hover:bg-opacity-90;
+    @apply bg-primary ring-primary hover:bg-primary-dark hover:ring-primary-dark;
   }
 
   .shc-button-secondary {
-    @apply border-secondary bg-secondary text-secondary-foreground hover:bg-opacity-90;
+    @apply bg-secondary ring-secondary hover:bg-secondary-dark hover:ring-secondary-dark;
+  }
+
+  .shc-button-accent {
+    @apply bg-accent text-accent-foreground ring-accent hover:bg-accent-dark hover:ring-accent-dark;
   }
 
   .shc-button-outline {
-    @apply border-input bg-background hover:bg-accent hover:text-accent-foreground;
+    @apply bg-background ring-input hover:bg-input;
   }
 
   .shc-button-link {
-    @apply text-primary underline-offset-4 hover:underline;
+    @apply underline decoration-input decoration-1 underline-offset-2 hover:decoration-foreground focus-visible:decoration-foreground;
   }
 
   .shc-button-normal {
-    @apply px-4;
+    @apply px-2.5 py-1.5;
   }
 
   .shc-button-sm {
-    @apply px-3 py-1.5;
+    @apply px-2 py-1;
   }
 
   .shc-button-lg {
-    @apply px-8 py-2.5;
+    @apply px-3 py-2;
   }
 
   .shc-button-icon {
-    @apply h-10 w-10;
+    @apply h-8 w-8;
   }
 }
 
 @layer utilities {
+  .ring-no-inset {
+    --tw-ring-inset: ;
+  }
+
   .shc-flex-middle-start {
     @apply flex items-center justify-start;
   }
@@ -134,6 +158,6 @@
   }
 
   .shc-transition {
-    @apply transition-colors duration-300 ease-linear;
+    @apply transition-all duration-100 ease-linear;
   }
 }

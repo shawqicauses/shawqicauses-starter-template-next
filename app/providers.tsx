@@ -6,6 +6,7 @@ import {QueryClient, QueryClientProvider} from "@tanstack/react-query"
 import {httpBatchLink} from "@trpc/client"
 import {PropsWithChildren, useState} from "react"
 import trpc from "../client"
+import {Toaster} from "../components/ui"
 
 const createQueryClient = function createQueryClient() {
   return new QueryClient({
@@ -39,7 +40,10 @@ const Providers = function Providers({children}: PropsWithChildren) {
 
   return (
     <trpc.Provider client={trpcClient} queryClient={queryClient}>
-      <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+      <QueryClientProvider client={queryClient}>
+        {children}
+        <Toaster />
+      </QueryClientProvider>
     </trpc.Provider>
   )
 }
