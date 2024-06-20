@@ -1,6 +1,6 @@
 "use client"
 
-// DONE REVIEWING: GITHUB COMMIT 2️⃣
+// DONE REVIEWING: GITHUB COMMIT 3️⃣
 
 import * as SheetPrimitive from "@radix-ui/react-dialog"
 import {ComponentPropsWithoutRef, ElementRef, forwardRef} from "react"
@@ -12,7 +12,7 @@ const SheetOverlay = forwardRef<
 >(({className, ...props}, ref) => (
   <SheetPrimitive.Overlay
     ref={ref}
-    className={cn("shc-alert-dialog-overlay-base", className)}
+    className={cn("shc-dialog-overlay-base", className)}
     {...props}
   />
 ))

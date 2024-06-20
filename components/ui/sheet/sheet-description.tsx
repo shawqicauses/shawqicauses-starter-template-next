@@ -1,6 +1,6 @@
 "use client"
 
-// DONE REVIEWING: GITHUB COMMIT 1️⃣
+// DONE REVIEWING: GITHUB COMMIT 2️⃣
 
 import * as SheetPrimitive from "@radix-ui/react-dialog"
 import {ComponentPropsWithoutRef, ElementRef, forwardRef} from "react"
@@ -12,7 +12,7 @@ const SheetDescription = forwardRef<
 >(({className, ...props}, ref) => (
   <SheetPrimitive.Description
     ref={ref}
-    className={cn("shc-sheet-description-base", className)}
+    className={cn("shc-dialog-description-base", className)}
     {...props}
   />
 ))

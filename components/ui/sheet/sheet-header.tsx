@@ -1,12 +1,12 @@
 "use client"
 
-// DONE REVIEWING: GITHUB COMMIT 1️⃣
+// DONE REVIEWING: GITHUB COMMIT 2️⃣
 
 import {HTMLAttributes} from "react"
 import {cn} from "../../../lib/utils"
 
 const SheetHeader = function SheetHeader({className, ...props}: HTMLAttributes<HTMLDivElement>) {
-  return <div className={cn("shc-sheet-header-base", className)} {...props} />
+  return <div className={cn("shc-dialog-header-base", className)} {...props} />
 }
 
 SheetHeader.displayName = "SheetHeader"

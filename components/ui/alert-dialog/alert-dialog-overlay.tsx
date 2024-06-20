@@ -1,6 +1,6 @@
 "use client"
 
-// DONE REVIEWING: GITHUB COMMIT
+// DONE REVIEWING: GITHUB COMMIT 1️⃣
 
 import * as AlertDialogPrimitive from "@radix-ui/react-alert-dialog"
 import {ComponentPropsWithoutRef, ElementRef, forwardRef} from "react"
@@ -12,7 +12,7 @@ const AlertDialogOverlay = forwardRef<
 >(({className, ...props}, ref) => (
   <AlertDialogPrimitive.Overlay
     ref={ref}
-    className={cn("shc-alert-dialog-overlay-base", className)}
+    className={cn("shc-dialog-overlay-base", className)}
     {...props}
   />
 ))

@@ -1,6 +1,6 @@
 "use client"
 
-// DONE REVIEWING: GITHUB COMMIT 2️⃣
+// DONE REVIEWING: GITHUB COMMIT 3️⃣
 
 import * as SheetPrimitive from "@radix-ui/react-dialog"
 import {VariantProps, cva} from "class-variance-authority"
@@ -34,7 +34,7 @@ const SheetContent = forwardRef<ElementRef<typeof SheetPrimitive.Content>, Sheet
       <SheetOverlay />
       <SheetPrimitive.Content ref={ref} className={cn(sheetVariants({side}), className)} {...props}>
         {children}
-        <SheetClose className="shc-sheet-close">
+        <SheetClose className="shc-dialog-close-base">
           <span className="sr-only">Close</span>
           <X aria-hidden="true" className="h-4 w-4" />
         </SheetClose>
