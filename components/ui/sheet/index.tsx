@@ -1,4 +1,7 @@
-// DONE REVIEWING: GITHUB COMMIT
+"use client"
+
+// DONE REVIEWING: GITHUB COMMIT 1️⃣
+
 import * as SheetPrimitive from "@radix-ui/react-dialog"
 
 const Sheet = SheetPrimitive.Root

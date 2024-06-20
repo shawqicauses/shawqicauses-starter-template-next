@@ -1,4 +1,7 @@
-// DONE REVIEWING: GITHUB COMMIT 1️⃣
+"use client"
+
+// DONE REVIEWING: GITHUB COMMIT 2️⃣
+
 import * as SheetPrimitive from "@radix-ui/react-dialog"
 import {VariantProps, cva} from "class-variance-authority"
 import {X} from "lucide-react"
