@@ -1,4 +1,4 @@
-/* DONE REVIEWING: GITHUB COMMIT 3️⃣ */
+/* DONE REVIEWING: GITHUB COMMIT 4️⃣ */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -33,7 +33,7 @@
 
   /* Alert Dialog Component */
   .shc-alert-dialog-overlay-base {
-    @apply fixed inset-0 z-10 bg-background/75 data-[state=open]:animate-in data-[sate=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0;
+    @apply fixed inset-0 z-10 bg-black/75 data-[state=open]:animate-in data-[sate=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0;
   }
 
   .shc-alert-dialog-content-base {
@@ -58,7 +58,7 @@
 
   /* Sheet Component */
   .shc-sheet-base {
-    @apply shc-transition fixed z-50 gap-4 bg-background p-6 shadow-lg data-[state=closed]:duration-300 data-[state=open]:duration-500 data-[state=open]:animate-in data-[state=closed]:animate-out;
+    @apply fixed z-50 gap-4 bg-background p-6 shadow-lg outline-none transition duration-100 ease-in-out focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-foreground data-[state=closed]:duration-300 data-[state=open]:duration-500 data-[state=open]:animate-in data-[state=closed]:animate-out;
   }
 
   .shc-sheet-top {
@@ -78,7 +78,7 @@
   }
 
   .shc-sheet-close {
-    @apply shc-transition absolute right-4 top-4 rounded-sm opacity-75 outline-none ring-offset-background hover:opacity-100 focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 data-[state=open]:bg-muted;
+    @apply absolute right-4 top-4 rounded-sm opacity-75 outline-none ring-offset-background transition duration-100 ease-in-out hover:opacity-100 focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 data-[state=open]:bg-muted;
   }
 
   .shc-sheet-header-base {
