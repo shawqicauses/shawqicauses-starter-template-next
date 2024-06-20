@@ -1,9 +1,13 @@
-/* DONE REVIEWING: GITHUB COMMIT 7️⃣ */
+/* DONE REVIEWING: GITHUB COMMIT 8️⃣ */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
+  ::selection {
+    @apply bg-foreground text-background;
+  }
+
   body {
     @apply bg-background text-foreground;
   }
