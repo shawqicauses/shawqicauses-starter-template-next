@@ -1,6 +1,6 @@
 "use client"
 
-// DONE REVIEWING: GITHUB COMMIT 3️⃣
+// DONE REVIEWING: GITHUB COMMIT
 
 import * as SheetPrimitive from "@radix-ui/react-dialog"
 import {VariantProps, cva} from "class-variance-authority"

@@ -1,6 +1,6 @@
 "use client"
 
-// DONE REVIEWING: GITHUB COMMIT 2️⃣
+// DONE REVIEWING: GITHUB COMMIT
 
 import * as DialogPrimitive from "@radix-ui/react-dialog"
 import {X} from "lucide-react"

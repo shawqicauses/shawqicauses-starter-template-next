@@ -1,6 +1,6 @@
 "use client"
 
-// DONE REVIEWING: GITHUB COMMIT 2️⃣
+// DONE REVIEWING: GITHUB COMMIT
 
 import {HTMLAttributes} from "react"
 import {cn} from "../../../lib/utils"
