@@ -1,9 +1,9 @@
-// DONE REVIEWING: GITHUB COMMIT
+// DONE REVIEWING: GITHUB COMMIT 1️⃣
 import * as SheetPrimitive from "@radix-ui/react-dialog"
 import {ComponentPropsWithoutRef, ElementRef, forwardRef} from "react"
 import {cn} from "../../../lib/utils"
 
-const SheetOverly = forwardRef<
+const SheetOverlay = forwardRef<
   ElementRef<typeof SheetPrimitive.Overlay>,
   ComponentPropsWithoutRef<typeof SheetPrimitive.Overlay>
 >(({className, ...props}, ref) => (
@@ -14,5 +14,5 @@ const SheetOverly = forwardRef<
   />
 ))
 
-SheetOverly.displayName = SheetPrimitive.Overlay.displayName
-export default SheetOverly
+SheetOverlay.displayName = SheetPrimitive.Overlay.displayName
+export default SheetOverlay
