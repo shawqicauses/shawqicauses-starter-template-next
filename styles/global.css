@@ -1,4 +1,4 @@
-/* DONE REVIEWING: GITHUB COMMIT */
+/* DONE REVIEWING: GITHUB COMMIT 1️⃣ */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -54,6 +54,27 @@
 
   .shc-alert-dialog-footer-base {
     @apply flex flex-col-reverse bg-muted/50 px-4 py-3 sm:flex-row sm:justify-end sm:space-x-2 sm:px-6;
+  }
+
+  /* Sheet Component */
+  .shc-sheet-base {
+    @apply shc-transition fixed z-50 gap-4 bg-background p-6 shadow-lg data-[state=closed]:duration-300 data-[state=open]:duration-500 data-[state=open]:animate-in data-[state=closed]:animate-out;
+  }
+
+  .shc-sheet-top {
+    @apply inset-x-0 top-0 border-b border-border data-[state=closed]:slide-out-to-top data-[state=open]:slide-in-from-top;
+  }
+
+  .shc-sheet-right {
+    @apply inset-y-0 right-0 h-full w-3/4 border-l border-border data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right sm:max-w-sm;
+  }
+
+  .shc-sheet-bottom {
+    @apply inset-x-0 bottom-0 border-t border-border data-[state=closed]:slide-out-to-bottom data-[state=open]:slide-in-from-bottom;
+  }
+
+  .shc-sheet-left {
+    @apply inset-y-0 left-0 h-full w-3/4 border-r border-border data-[state=closed]:slide-out-to-left data-[state=open]:slide-in-from-left sm:max-w-sm;
   }
 
   /* Card Component */
