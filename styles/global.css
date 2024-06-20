@@ -1,4 +1,4 @@
-/* DONE REVIEWING: GITHUB COMMIT 4️⃣ */
+/* DONE REVIEWING: GITHUB COMMIT 5️⃣ */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -31,25 +31,44 @@
     @apply focus-visible:!ring-no-inset !ml-auto inline-flex !h-auto !items-center !justify-center !whitespace-nowrap !rounded-md !bg-background !px-2 !py-1 !text-xs !font-medium !leading-[1.25rem] !text-foreground !outline-none !ring-1 !ring-inset !ring-input !transition-all !duration-100 !ease-linear hover:!bg-input focus-visible:!ring-foreground focus-visible:!ring-offset-2 focus-visible:!ring-offset-background disabled:!pointer-events-none disabled:!cursor-not-allowed disabled:!opacity-50;
   }
 
-  /* Alert Dialog Component */
-  .shc-alert-dialog-overlay-base {
+  /* Dialog/Alert-Dialog/Sheet Component */
+  /* Dialog/Alert-Dialog/Sheet (Overlay) */
+  .shc-dialog-overlay-base {
     @apply fixed inset-0 z-10 bg-black/75 data-[state=open]:animate-in data-[sate=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0;
   }
 
-  .shc-alert-dialog-content-base {
+  /* Dialog/Alert-Dialog (Content) */
+  .shc-dialog-content-base {
     @apply fixed left-1/2 top-1/2 z-50 grid w-full max-w-lg -translate-x-1/2 -translate-y-1/2 overflow-hidden border border-border bg-background shadow-lg duration-100 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[sate=open]:zoom-in-95 data-[state=closed]:zoom-out-95 data-[state=closed]:slide-out-to-left-1/2 data-[state=closed]:slide-out-to-top-1/2 data-[state=open]:slide-in-from-left-1/2 data-[state=open]:slide-in-from-top-1/2 [@media(min-width:32rem)]:rounded-lg;
+  }
+
+  /* Dialog/Sheet (Close) */
+  .shc-dialog-close-base {
+    @apply absolute right-4 top-4 rounded-sm opacity-75 outline-none ring-offset-background transition duration-100 ease-in-out hover:opacity-100 focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 data-[state=open]:bg-muted;
+  }
+
+  /* Dialog/Sheet (Header) */
+  .shc-dialog-header-base {
+    @apply flex flex-col space-y-2 text-center sm:text-left;
   }
 
   .shc-alert-dialog-header-base {
     @apply flex flex-col space-y-2 bg-background px-4 pb-4 pt-5 text-center sm:p-6 sm:pb-4 sm:text-left;
   }
 
-  .shc-alert-dialog-title-base {
-    @apply text-base font-semi-bold leading-6 text-foreground;
+  /* Dialog/Alert-Dialog/Sheet (Title) */
+  .shc-dialog-title-base {
+    @apply text-lg font-semi-bold leading-none text-foreground;
   }
 
-  .shc-alert-dialog-description-base {
+  /* Dialog/Alert-Dialog/Sheet (Description) */
+  .shc-dialog-description-base {
     @apply text-sm text-muted-foreground;
+  }
+
+  /* Dialog/Sheet (Footer) */
+  .shc-dialog-footer-base {
+    @apply flex flex-col-reverse space-y-2 sm:flex-row sm:justify-end sm:space-x-2 sm:space-y-0;
   }
 
   .shc-alert-dialog-footer-base {
@@ -75,26 +94,6 @@
 
   .shc-sheet-left {
     @apply inset-y-0 left-0 h-full w-3/4 border-r border-border data-[state=closed]:slide-out-to-left data-[state=open]:slide-in-from-left sm:max-w-sm;
-  }
-
-  .shc-sheet-close {
-    @apply absolute right-4 top-4 rounded-sm opacity-75 outline-none ring-offset-background transition duration-100 ease-in-out hover:opacity-100 focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 data-[state=open]:bg-muted;
-  }
-
-  .shc-sheet-header-base {
-    @apply flex flex-col space-y-2 text-center sm:text-left;
-  }
-
-  .shc-sheet-footer-base {
-    @apply flex flex-col-reverse space-y-2 sm:flex-row sm:justify-end sm:space-x-2 sm:space-y-0;
-  }
-
-  .shc-sheet-title-base {
-    @apply text-lg font-semi-bold text-foreground;
-  }
-
-  .shc-sheet-description-base {
-    @apply text-sm text-muted-foreground;
   }
 
   /* Card Component */
