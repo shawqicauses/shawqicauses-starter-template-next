@@ -1,6 +1,6 @@
 "use client"
 
-// DONE REVIEWING: GITHUB COMMIT 1️⃣
+// DONE REVIEWING: GITHUB COMMIT 2️⃣
 
 import * as DialogPrimitive from "@radix-ui/react-dialog"
 import {X} from "lucide-react"
@@ -17,7 +17,7 @@ const DialogContent = forwardRef<
     <DialogOverlay />
     <DialogPrimitive.Content
       ref={ref}
-      className={cn("shc-dialog-content-base", className)}
+      className={cn("dialog shc-dialog-content-base", className)}
       {...props}>
       {children}
       <DialogClose className="shc-dialog-close-base">
