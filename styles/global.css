@@ -1,4 +1,4 @@
-/* DONE REVIEWING: GITHUB COMMIT 2️⃣ */
+/* DONE REVIEWING: GITHUB COMMIT 3️⃣ */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -80,6 +80,23 @@
   .shc-sheet-close {
     @apply shc-transition absolute right-4 top-4 rounded-sm opacity-75 outline-none ring-offset-background hover:opacity-100 focus-visible:ring-2 focus-visible:ring-foreground focus-visible:ring-offset-2 disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50 data-[state=open]:bg-muted;
   }
+
+  .shc-sheet-header-base {
+    @apply flex flex-col space-y-2 text-center sm:text-left;
+  }
+
+  .shc-sheet-footer-base {
+    @apply flex flex-col-reverse space-y-2 sm:flex-row sm:justify-end sm:space-x-2 sm:space-y-0;
+  }
+
+  .shc-sheet-title-base {
+    @apply text-lg font-semi-bold text-foreground;
+  }
+
+  .shc-sheet-description-base {
+    @apply text-sm text-muted-foreground;
+  }
+
   /* Card Component */
   .shc-card {
     @apply rounded-md border border-border bg-background text-foreground shadow-sm;
