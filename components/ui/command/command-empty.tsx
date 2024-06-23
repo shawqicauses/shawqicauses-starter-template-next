@@ -1,11 +1,13 @@
-// DONE REVIEWING: GITHUB COMMIT
+// DONE REVIEWING: GITHUB COMMIT 1️⃣
 import {Command as CommandPrimitive} from "cmdk"
 import {ComponentPropsWithoutRef, ElementRef, forwardRef} from "react"
 
 const CommandEmpty = forwardRef<
   ElementRef<typeof CommandPrimitive.Empty>,
   ComponentPropsWithoutRef<typeof CommandPrimitive.Empty>
->((props, ref) => <CommandPrimitive.Empty ref={ref} className="shc-command-empty" {...props} />)
+>((props, ref) => (
+  <CommandPrimitive.Empty ref={ref} className="shc-command-empty-base" {...props} />
+))
 
 CommandEmpty.displayName = CommandPrimitive.Empty.displayName
 export default CommandEmpty
