@@ -1,4 +1,4 @@
-// DONE REVIEWING: GITHUB COMMIT
+// DONE REVIEWING: GITHUB COMMIT 1️⃣
 import {Command as CommandPrimitive} from "cmdk"
 import {ComponentPropsWithoutRef, ElementRef, forwardRef} from "react"
 import {cn} from "../../../lib/utils"
@@ -9,7 +9,7 @@ const CommandSeparator = forwardRef<
 >(({className, ...props}, ref) => (
   <CommandPrimitive.Separator
     ref={ref}
-    className={cn("shc-command-separator", className)}
+    className={cn("shc-command-separator-base", className)}
     {...props}
   />
 ))
