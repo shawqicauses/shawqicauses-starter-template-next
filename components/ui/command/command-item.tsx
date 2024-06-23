@@ -1,6 +1,6 @@
 "use client"
 
-// DONE REVIEWING: GITHUB COMMIT 2️⃣
+// DONE REVIEWING: GITHUB COMMIT
 
 import {Command as CommandPrimitive} from "cmdk"
 import {ComponentPropsWithoutRef, ElementRef, forwardRef} from "react"
