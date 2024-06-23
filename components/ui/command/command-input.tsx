@@ -1,4 +1,7 @@
-// DONE REVIEWING: GITHUB COMMIT 2️⃣
+"use client"
+
+// DONE REVIEWING: GITHUB COMMIT 3️⃣
+
 import {Command as CommandPrimitive} from "cmdk"
 import {Search} from "lucide-react"
 import {ComponentPropsWithoutRef, ElementRef, forwardRef} from "react"

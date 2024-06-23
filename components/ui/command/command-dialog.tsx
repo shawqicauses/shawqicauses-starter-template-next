@@ -1,4 +1,7 @@
-// DONE REVIEWING: GITHUB COMMIT 1️⃣
+"use client"
+
+// DONE REVIEWING: GITHUB COMMIT 2️⃣
+
 import {type DialogProps} from "@radix-ui/react-dialog"
 import Command from "."
 import Dialog from "../dialog"
