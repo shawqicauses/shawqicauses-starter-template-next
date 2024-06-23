@@ -1,6 +1,6 @@
 "use client"
 
-// DONE REVIEWING: GITHUB COMMIT 3️⃣
+// DONE REVIEWING: GITHUB COMMIT
 
 import {Command as CommandPrimitive} from "cmdk"
 import {Search} from "lucide-react"
