@@ -1,4 +1,4 @@
-// DONE REVIEWING: GITHUB COMMIT
+// DONE REVIEWING: GITHUB COMMIT 1️⃣
 export {default as AlertDialog, AlertDialogTrigger} from "./alert-dialog"
 export {default as AlertDialogAction} from "./alert-dialog/alert-dialog-action"
 export {default as AlertDialogCancel} from "./alert-dialog/alert-dialog-cancel"
@@ -40,6 +40,8 @@ export {default as FormLabel} from "./form/form-label"
 export {default as FormMessage} from "./form/form-message"
 export {default as Input} from "./input"
 export {default as Label} from "./label"
+export {default as Popover, PopoverAnchor, PopoverTrigger} from "./popover"
+export {default as PopoverContent} from "./popover/popover-content"
 export {default as Sheet, SheetClose, SheetPortal, SheetTrigger} from "./sheet"
 export {default as SheetContent} from "./sheet/sheet-content"
 export {default as SheetDescription} from "./sheet/sheet-description"
