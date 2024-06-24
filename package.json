@@ -1,5 +1,5 @@
 {
-  "reviewed": "true",
+  "reviewed": "true 1️⃣",
   "version": "1.0.0",
   "name": "shawqicauses-starter-template-next",
   "description": "A starter template for Next.JS projects includes every package that I need/use to build them. Developed by @shawqicauses.",
@@ -17,6 +17,7 @@
     "@radix-ui/react-alert-dialog": "1.0.5",
     "@radix-ui/react-dialog": "1.1.0",
     "@radix-ui/react-label": "2.0.2",
+    "@radix-ui/react-popover": "1.1.1",
     "@radix-ui/react-slot": "1.0.2",
     "@radix-ui/react-switch": "1.0.3",
     "@tailwindcss/forms": "0.5.7",
