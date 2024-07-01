@@ -2,10 +2,10 @@
 
 // DONE REVIEWING: GITHUB COMMIT
 
-import {HTMLAttributes, forwardRef} from "react"
+import {ThHTMLAttributes, forwardRef} from "react"
 import {cn} from "../../../lib/utils"
 
-const TableHead = forwardRef<HTMLTableCellElement, HTMLAttributes<HTMLTableCellElement>>(
+const TableHead = forwardRef<HTMLTableCellElement, ThHTMLAttributes<HTMLTableCellElement>>(
   ({className, ...props}, ref) => (
     <th ref={ref} className={cn("shc-table-head-base", className)} {...props} />
   )
