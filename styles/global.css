@@ -27,6 +27,31 @@
     @apply flex h-full w-full items-center justify-center rounded-full bg-muted;
   }
 
+  /* Breadcrumb Component */
+  .shc-breadcrumb-list-base {
+    @apply flex flex-wrap items-center gap-1.5 break-words text-sm text-muted-foreground sm:gap-2.5;
+  }
+
+  .shc-breadcrumb-item-base {
+    @apply inline-flex items-center gap-1.5;
+  }
+
+  .shc-breadcrumb-link-base {
+    @apply transition-colors hover:text-foreground;
+  }
+
+  .shc-breadcrumb-page-base {
+    @apply font-normal text-foreground;
+  }
+
+  .shc-breadcrumb-separator-base {
+    @apply [&>svg]:size-3.5;
+  }
+
+  .shc-breadcrumb-ellipsis-base {
+    @apply flex h-9 w-9 items-center justify-center;
+  }
+
   /* Sonner Component */
   .shc-toast-base {
     @apply !border-border !bg-background !text-foreground !shadow-lg !outline-none focus-visible:!ring-2 focus-visible:!ring-inset focus-visible:!ring-foreground;
