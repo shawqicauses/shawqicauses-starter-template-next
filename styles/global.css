@@ -14,7 +14,20 @@
 }
 
 @layer components {
-  /* Sonner */
+  /* Avatar Component */
+  .shc-avatar-base {
+    @apply relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full;
+  }
+
+  .shc-avatar-image-base {
+    @apply aspect-square h-full w-full;
+  }
+
+  .shc-avatar-fallback-base {
+    @apply flex h-full w-full items-center justify-center rounded-full bg-muted;
+  }
+
+  /* Sonner Component */
   .shc-toast-base {
     @apply !border-border !bg-background !text-foreground !shadow-lg !outline-none focus-visible:!ring-2 focus-visible:!ring-inset focus-visible:!ring-foreground;
   }
