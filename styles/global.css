@@ -52,6 +52,43 @@
     @apply flex h-9 w-9 items-center justify-center;
   }
 
+  /* Data-Table Component */
+  .shc-table-wrapper-base {
+    @apply relative w-full overflow-auto;
+  }
+
+  .shc-table-base {
+    @apply w-full caption-bottom text-sm;
+  }
+
+  .shc-table-header-base {
+    @apply [&_tr]:border-b;
+  }
+
+  .shc-table-body-base {
+    @apply [&_tr:last-child]:border-0;
+  }
+
+  .shc-table-footer-base {
+    @apply border-t bg-muted/50 font-medium [&>tr]:last:border-b-0;
+  }
+
+  .shc-table-row-base {
+    @apply border-b transition-colors hover:bg-muted/50 data-[state=checked]:bg-muted/50;
+  }
+
+  .shc-table-head-base {
+    @apply h-12 px-4 text-left align-middle font-medium text-muted-foreground [&:has([role=checkbox])]:pr-0;
+  }
+
+  .shc-table-cell-base {
+    @apply p-4 align-middle [&:has([role=checkbox])]:pr-0;
+  }
+
+  .shc-table-caption-base {
+    @apply mt-4 text-sm text-muted-foreground;
+  }
+
   /* Sonner Component */
   .shc-toast-base {
     @apply !border-border !bg-background !text-foreground !shadow-lg !outline-none focus-visible:!ring-2 focus-visible:!ring-inset focus-visible:!ring-foreground;
