@@ -14,6 +14,7 @@ const buttonVariants = cva("shc-button-base", {
       secondary: "shc-button-secondary",
       accent: "shc-button-accent",
       outline: "shc-button-outline",
+      ghost: "shc-button-ghost",
       link: "shc-button-link"
     },
     size: {
